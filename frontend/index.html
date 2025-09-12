@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>Indoor Map Pathfinder</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #f8f8f8;
+    }
+    #wrap {
+      max-width: 1200px;
+      margin: auto;
+      padding: 1em;
+    }
+    svg {
+      width: 100%;
+      height: auto;
+      background: #fff;
+      border: 1px solid #ccc;
+      display: block;
+    }
+    #floorSelector {
+      margin-bottom: 10px;
+      padding: 5px 10px;
+    }
+  </style>
+</head>
+<body>
+  <div style="position: absolute; top: 10px; left: 10px; background: white; padding: 10px; border-radius: 5px;">
+    <label>Start:</label>
+    <select id="startSelect"></select><br><br>
+    <label>End:</label>
+    <select id="endSelect"></select><br><br>
+    <button onclick="findPathFromDropdown()">Go</button>
+  </div>
+
+  <select id="floor-select">
+    <option value="1">ชั้น 1</option>
+    <option value="2">ชั้น 2</option>
+  </select>
+
+  <div id="svg-container"></div>
+
+  <script src="script.js"></script>
+</body>
+
+
+</html>
