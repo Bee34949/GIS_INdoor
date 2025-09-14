@@ -2,49 +2,24 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8" />
-  <title>Indoor Map Pathfinder</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      background: #f8f8f8;
-    }
-    #wrap {
-      max-width: 1200px;
-      margin: auto;
-      padding: 1em;
-    }
-    svg {
-      width: 100%;
-      height: auto;
-      background: #fff;
-      border: 1px solid #ccc;
-      display: block;
-    }
-    #floorSelector {
-      margin-bottom: 10px;
-      padding: 5px 10px;
-    }
-  </style>
+  <title>Indoor Map Web App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <div style="position: absolute; top: 10px; left: 10px; background: white; padding: 10px; border-radius: 5px;">
-    <label>Start:</label>
-    <select id="startSelect"></select><br><br>
-    <label>End:</label>
-    <select id="endSelect"></select><br><br>
-    <button onclick="findPathFromDropdown()">Go</button>
-  </div>
+<body class="bg-gray-100 font-sans">
 
-  <select id="floor-select">
-    <option value="1">ชั้น 1</option>
-    <option value="2">ชั้น 2</option>
-  </select>
+  <!-- Header -->
+  <header class="bg-white shadow p-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold">Indoor Map</h1>
+    <nav class="space-x-4">
+      <button onclick="navigate('home')" class="hover:underline">Home</button>
+      <button onclick="navigate('map')" class="hover:underline">Map</button>
+      <button onclick="navigate('search')" class="hover:underline">Search</button>
+    </nav>
+  </header>
 
-  <div id="svg-container"></div>
+  <!-- Main -->
+  <main id="app" class="p-6"></main>
 
-  <script src="script.js"></script>
+  <script src="app.js"></script>
 </body>
-
-
 </html>
