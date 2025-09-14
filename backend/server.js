@@ -1,21 +1,20 @@
 // backend/server.js
-const express = require('express');
-const cors = require('cors');
+const express = require("express");
+const path = require("path");
+const dotenv = require("dotenv");
+
+dotenv.config();
+
 const app = express();
-const port = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
-// Middleware
-app.use(cors());
-app.use(express.json());
+// ✅ serve frontend
+app.use(express.static(path.join(__dirname, "../frontend")));
 
-// Routes
-const floorRoutes = require('./routes/floor');
-const pathfinderRoutes = require('./routes/pathfinder');
+// ✅ API routes
+const pathfinderRoutes = require("./routes/pathfinder.js");
+app.use("/api", pathfinderRoutes);
 
-app.use('/api/floor', floorRoutes);
-app.use('/api/path', pathfinderRoutes);
-
-// Start server
-app.listen(port, () => {
-  console.log(`🚀 Server running at http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`🚀 Server running at http://localhost:${PORT}`);
 });
