@@ -3,23 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <title>Indoor Map Web App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 font-sans">
-
-  <!-- Header -->
   <header class="bg-white shadow p-4 flex justify-between items-center">
     <h1 class="text-xl font-bold">Indoor Map</h1>
     <nav class="space-x-4">
       <button onclick="navigate('home')" class="hover:underline">Home</button>
       <button onclick="navigate('map')" class="hover:underline">Map</button>
       <button onclick="navigate('search')" class="hover:underline">Search</button>
+      <button onclick="navigate('admin')" class="hover:underline">Admin</button>
     </nav>
   </header>
-
-  <!-- Main -->
   <main id="app" class="p-6"></main>
-
   <script src="app.js"></script>
 </body>
 </html>

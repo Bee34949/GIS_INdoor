@@ -1,157 +1,105 @@
 const express = require("express");
+const fs = require("fs");
+const path = require("path");
+
 const router = express.Router();
-const fetch = require("node-fetch");
-require("dotenv").config();
 
-const QDRANT_URL = "https://84dca8b5-df3f-4363-9c84-ec41b1dcc2a6.us-east4-0.gcp.cloud.qdrant.io";
-const API_KEY = process.env.QDRANT_API_KEY;
-
-// --- helper: Qdrant scroll ---
-async function qdrantScroll(collection, filter) {
-  const res = await fetch(`${QDRANT_URL}/collections/${collection}/points/scroll`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "api-key": API_KEY
-    },
-    body: JSON.stringify({ filter, limit: 10000 })
-  });
-
-  if (!res.ok) {
-    const errText = await res.text();
-    throw new Error(`Qdrant scroll failed: ${res.status} ${res.statusText} - ${errText}`);
-  }
-  const data = await res.json();
-  return data.result.points || [];
+function readJSON(p) {
+  try { return JSON.parse(fs.readFileSync(p, "utf-8")); } catch { return null; }
 }
 
-// --- Dijkstra ---
-function dijkstra(nodes, edges, startId, endId) {
-  const distances = {};
-  const prev = {};
-  const unvisited = new Set(Object.keys(nodes));
+function euclid(a, b) {
+  const dx = a.x - b.x, dy = a.y - b.y;
+  return Math.hypot(dx, dy);
+}
 
-  for (const id of Object.keys(nodes)) {
-    distances[id] = Infinity;
-    prev[id] = null;
-  }
-  distances[startId] = 0;
+function buildGraph(nodesObj, edgesArr) {
+  const nodes = nodesObj || {};
+  const edges = {};
+  const push = (u, v, w) => {
+    edges[u] = edges[u] || [];
+    edges[v] = edges[v] || [];
+    edges[u].push({ v, w });
+    edges[v].push({ v: u, w });
+  };
 
-  while (unvisited.size > 0) {
-    let current = null;
-    for (const node of unvisited) {
-      if (current === null || distances[node] < distances[current]) {
-        current = node;
-      }
+  if (Array.isArray(edgesArr) && edgesArr.length) {
+    for (const e of edgesArr) {
+      const a = nodes[e.src], b = nodes[e.dst];
+      if (!a || !b) continue;
+      push(e.src, e.dst, Number(e.weight ?? euclid(a, b)));
     }
-    if (distances[current] === Infinity) break;
-    if (current === endId) break;
-
-    unvisited.delete(current);
-
-    const neighbors = edges.filter(e => e.from === current || e.to === current);
-    for (const edge of neighbors) {
-      const neighborId = edge.from === current ? edge.to : edge.from;
-      if (!unvisited.has(neighborId)) continue;
-
-      const alt = distances[current] + (edge.distance || 1);
-      if (alt < distances[neighborId]) {
-        distances[neighborId] = alt;
-        prev[neighborId] = current;
-      }
+  } else {
+    // WHY: fallback k-NN for quick demo
+    const ids = Object.keys(nodes);
+    for (const id of ids) {
+      const a = nodes[id];
+      const dists = ids
+        .filter(j => j !== id && nodes[j].floor === a.floor)
+        .map(j => ({ j, w: euclid(a, nodes[j]) }))
+        .sort((x, y) => x.w - y.w)
+        .slice(0, 3);
+      for (const { j, w } of dists) push(id, j, w);
     }
   }
+  return { nodes, edges };
+}
 
+function dijkstra(G, src, dst) {
+  const dist = {}, prev = {}, Q = new Set(Object.keys(G.edges));
+  for (const v of Q) dist[v] = Infinity;
+  if (!Q.has(src) || !Q.has(dst)) return null;
+  dist[src] = 0;
+
+  while (Q.size) {
+    let u = null;
+    for (const v of Q) if (u === null || dist[v] < dist[u]) u = v;
+    Q.delete(u);
+    if (u === dst) break;
+    for (const { v, w } of G.edges[u] || []) {
+      if (!Q.has(v)) continue;
+      const alt = dist[u] + w;
+      if (alt < dist[v]) { dist[v] = alt; prev[v] = u; }
+    }
+  }
+  if (dst in prev === false && src !== dst) return null;
   const path = [];
-  let u = endId;
-  if (prev[u] !== null || u === startId) {
-    while (u) {
-      path.unshift(u);
-      u = prev[u];
-    }
-  }
-
-  return { path, distance: distances[endId] };
+  let u = dst; 
+  while (u) { path.unshift(u); if (u === src) break; u = prev[u]; }
+  return { path, cost: dist[dst] };
 }
 
-// --- Pathfinding API ---
-router.get("/route", async (req, res) => {
-  const startId = String(req.query.start).trim();
-  const endId   = String(req.query.end).trim();
-  const floor   = parseInt(req.query.floor);
-
-  try {
-    // โหลด nodes
-    const nodePoints = await qdrantScroll("indoor_nodes", {
-      must: [{ key: "floor", match: { value: floor } }]
-    });
-    const nodes = {};
-    nodePoints.forEach(p => {
-      if (p.payload.id) {
-        const id = String(p.payload.id).trim();
-        nodes[id] = p.payload;
-      }
-    });
-
-    // โหลด edges
-    const edgePoints = await qdrantScroll("indoor_graph", {
-      must: [{ key: "floor", match: { value: floor } }]
-    });
-    const edges = edgePoints
-      .map(p => p.payload)
-      .filter(e => e.from && e.to);
-
-    // Debug
-    console.log("Start:", startId, "End:", endId, "Floor:", floor);
-    console.log("Nodes loaded:", Object.keys(nodes).length);
-    console.log("Edges loaded:", edges.length);
-    console.log("Sample node:", Object.values(nodes)[0]);
-    console.log("Sample edge:", edges[0]);
-
-    if (!nodes[startId] || !nodes[endId]) {
-      return res.status(404).json({ error: "Start or end node not found" });
-    }
-
-    const result = dijkstra(nodes, edges, startId, endId);
-
-    if (result.path.length === 0) {
-      return res.status(404).json({ error: "No path found" });
-    }
-
-    res.json({
-      start: startId,
-      end: endId,
-      floor,
-      distance: result.distance,
-      path: result.path,
-      nodes
-    });
-
-  } catch (err) {
-    console.error("❌ Error pathfinding:", err);
-    res.status(500).json({ error: "Pathfinding failed", details: err.message });
-  }
+router.get("/graph", (req, res) => {
+  const floor = String(req.query.floor || "1");
+  const base = path.join(__dirname, "..", "data", `Floor0${floor}`);
+  const nodes = readJSON(path.join(base, "frontend/Floor01/nodes_floor1.json")) || {};
+  const doorsMaybe = readJSON(path.join(base, "frontend/Floor01/doors.json"));
+  const edges = readJSON(path.join(base, "edges_floor1.json")) || [];
+  const merged = { ...nodes, ...(doorsMaybe?.nodes || doorsMaybe || {}) };
+  const G = buildGraph(merged, edges);
+  res.json({ nodes: G.nodes, edges: G.edges });
 });
 
-// --- Debug API: list nodes on a floor ---
-router.get("/debugNodes", async (req, res) => {
-  const floor = parseInt(req.query.floor);
+router.get("/path", (req, res) => {
+  const { from, to, floor = "1" } = req.query;
+  if (!from || !to) return res.status(400).json({ error: "from/to required" });
 
-  try {
-    const nodePoints = await qdrantScroll("indoor_nodes", {
-      must: [{ key: "floor", match: { value: floor } }]
-    });
-
-    const list = nodePoints
-      .map(p => p.payload)
-      .filter(n => n.id) // เฉพาะที่เป็น node
-      .map(n => ({ id: n.id, type: n.type, floor: n.floor, name: n.name }));
-
-    res.json({ floor, count: list.length, nodes: list });
-  } catch (err) {
-    console.error("❌ Error debugNodes:", err);
-    res.status(500).json({ error: "Debug failed", details: err.message });
+  const base = path.join(__dirname, "..", "data", `Floor0${floor}`);
+  const nodes = readJSON(path.join(base, "frontend/Floor01/nodes_floor1.json")) || {};
+  const doorsMaybe = readJSON(path.join(base, "frontend/Floor01/doors.json"));
+  const edges = readJSON(path.join(base, "edges_floor1.json")) || [];
+  const merged = { ...nodes, ...(doorsMaybe?.nodes || doorsMaybe || {}) };
+  const G = buildGraph(merged, edges);
+  if (!merged[from] || !merged[to]) {
+    return res.status(404).json({ error: "node not found" });
   }
+  const r = dijkstra(G, from, to);
+  if (!r) return res.status(404).json({ error: "no path" });
+  res.json({
+    path: r.path,
+    cost: r.cost,
+    coords: r.path.map(id => ({ id, ...merged[id] }))
+  });
 });
 
 module.exports = router;
