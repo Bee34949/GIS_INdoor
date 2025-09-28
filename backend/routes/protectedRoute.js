@@ -1,11 +1,6 @@
-// backend/routes/protectedRoute.js
-const express = require("express");
-const router = express.Router();
+// FILE: backend/routes/protectedRoute.js
+const express3 = require("express");
+const router3 = express3.Router();
 const verifyFirebaseToken = require("../middleware/verifyFirebaseToken");
-
-router.post("/nodes", verifyFirebaseToken, async (req, res) => {
-  // เพิ่ม node ได้เฉพาะ admin
-  res.json({ message: "คุณเป็น admin แล้ว!" });
-});
-
-module.exports = router;
+router3.get("/me", verifyFirebaseToken, (req,res)=> res.json({ uid: req.user.uid, email: req.user.email || null }));
+module.exports = router3;

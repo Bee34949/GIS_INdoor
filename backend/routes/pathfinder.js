@@ -1,105 +1,113 @@
+// FILE: backend/routes/pathfinder.js
+// Patch: deterministic UUID (v5), embed includes id+aliases, threshold=0.0, +/reindex
 const express = require("express");
-const fs = require("fs");
-const path = require("path");
-
 const router = express.Router();
+const { db } = require("../services/firebase");
+const { qdrantClientFromEnv, ensureCollection, embed } = require("../services/qdrant");
+const { v5: uuidv5, validate: uuidValidate } = require("uuid");
 
-function readJSON(p) {
-  try { return JSON.parse(fs.readFileSync(p, "utf-8")); } catch { return null; }
+// Qdrant init
+const qdrant = qdrantClientFromEnv();
+let COLLECTION = process.env.QDRANT_COLLECTION || "mju_poi";
+let QDRANT_READY = (async () => {
+  try { COLLECTION = await ensureCollection(qdrant, COLLECTION); return true; }
+  catch (e) { console.error("[QDRANT_INIT]", e?.message||e); return false; }
+})();
+async function ensureQdrantReady(res){
+  const ok = await QDRANT_READY;
+  if(!ok){ res.status(503).json({ error:"Qdrant not ready" }); return false; }
+  return true;
 }
 
-function euclid(a, b) {
-  const dx = a.x - b.x, dy = a.y - b.y;
-  return Math.hypot(dx, dy);
+// Deterministic point id: UUIDv5 from "mju-poi:"+id  (ไม่เปลี่ยนแม้รีสตาร์ต)
+const NS = "6ba7b810-9dad-11d1-80b4-00c04fd430c8"; // DNS namespace
+function toPointIdStable(id){
+  if (Number.isInteger(id)) return id;
+  const s = String(id);
+  if (uuidValidate(s)) return s;
+  return uuidv5("mju-poi:"+s, NS);
 }
 
-function buildGraph(nodesObj, edgesArr) {
-  const nodes = nodesObj || {};
-  const edges = {};
-  const push = (u, v, w) => {
-    edges[u] = edges[u] || [];
-    edges[v] = edges[v] || [];
-    edges[u].push({ v, w });
-    edges[v].push({ v: u, w });
-  };
+// Upsert POI
+router.post("/poi", async (req,res)=>{
+  try{
+    if(!(await ensureQdrantReady(res))) return;
+    const { id, name, type, floor, x, y, desc, aliases } = req.body || {};
+    if(!id || !name || !Number.isFinite(floor)) return res.status(400).json({ error:"id,name,floor required" });
 
-  if (Array.isArray(edgesArr) && edgesArr.length) {
-    for (const e of edgesArr) {
-      const a = nodes[e.src], b = nodes[e.dst];
-      if (!a || !b) continue;
-      push(e.src, e.dst, Number(e.weight ?? euclid(a, b)));
-    }
-  } else {
-    // WHY: fallback k-NN for quick demo
-    const ids = Object.keys(nodes);
-    for (const id of ids) {
-      const a = nodes[id];
-      const dists = ids
-        .filter(j => j !== id && nodes[j].floor === a.floor)
-        .map(j => ({ j, w: euclid(a, nodes[j]) }))
-        .sort((x, y) => x.w - y.w)
-        .slice(0, 3);
-      for (const { j, w } of dists) push(id, j, w);
-    }
+    const normAliases = Array.isArray(aliases) ? aliases.filter(Boolean) : [];
+    const data = {
+      id: String(id),
+      name,
+      type: type || "poi",
+      floor: Number(floor),
+      x: +x || 0,
+      y: +y || 0,
+      desc: desc || null,
+      aliases: normAliases,
+      updatedAt: Date.now(),
+    };
+
+    await db.collection("pois").doc(String(id)).set(data, { merge: true });
+
+    const textForEmbedding = [id, name, type, desc, ...normAliases].filter(Boolean).join(" ");
+    const vector = embed(textForEmbedding);
+    const pointId = toPointIdStable(id);
+
+    await qdrant.upsert(COLLECTION, {
+      wait: true,
+      points: [{ id: pointId, vector, payload: data }]
+    });
+
+    res.json({ ok:true, id:String(id), pointId });
+  }catch(e){
+    console.error("[/api/poi]", e?.message||e);
+    res.status(500).json({ error:"poi upsert failed", detail:String(e?.message||e) });
   }
-  return { nodes, edges };
-}
-
-function dijkstra(G, src, dst) {
-  const dist = {}, prev = {}, Q = new Set(Object.keys(G.edges));
-  for (const v of Q) dist[v] = Infinity;
-  if (!Q.has(src) || !Q.has(dst)) return null;
-  dist[src] = 0;
-
-  while (Q.size) {
-    let u = null;
-    for (const v of Q) if (u === null || dist[v] < dist[u]) u = v;
-    Q.delete(u);
-    if (u === dst) break;
-    for (const { v, w } of G.edges[u] || []) {
-      if (!Q.has(v)) continue;
-      const alt = dist[u] + w;
-      if (alt < dist[v]) { dist[v] = alt; prev[v] = u; }
-    }
-  }
-  if (dst in prev === false && src !== dst) return null;
-  const path = [];
-  let u = dst; 
-  while (u) { path.unshift(u); if (u === src) break; u = prev[u]; }
-  return { path, cost: dist[dst] };
-}
-
-router.get("/graph", (req, res) => {
-  const floor = String(req.query.floor || "1");
-  const base = path.join(__dirname, "..", "data", `Floor0${floor}`);
-  const nodes = readJSON(path.join(base, "frontend/Floor01/nodes_floor1.json")) || {};
-  const doorsMaybe = readJSON(path.join(base, "frontend/Floor01/doors.json"));
-  const edges = readJSON(path.join(base, "edges_floor1.json")) || [];
-  const merged = { ...nodes, ...(doorsMaybe?.nodes || doorsMaybe || {}) };
-  const G = buildGraph(merged, edges);
-  res.json({ nodes: G.nodes, edges: G.edges });
 });
 
-router.get("/path", (req, res) => {
-  const { from, to, floor = "1" } = req.query;
-  if (!from || !to) return res.status(400).json({ error: "from/to required" });
+// Semantic search
+router.get("/search", async (req,res)=>{
+  try{
+    if(!(await ensureQdrantReady(res))) return;
+    const q = String(req.query.q || "").trim();
+    const topK = Math.max(1, Math.min(20, +(req.query.topK||5)));
+    if(!q) return res.status(400).json({ error:"q required" });
 
-  const base = path.join(__dirname, "..", "data", `Floor0${floor}`);
-  const nodes = readJSON(path.join(base, "frontend/Floor01/nodes_floor1.json")) || {};
-  const doorsMaybe = readJSON(path.join(base, "frontend/Floor01/doors.json"));
-  const edges = readJSON(path.join(base, "edges_floor1.json")) || [];
-  const merged = { ...nodes, ...(doorsMaybe?.nodes || doorsMaybe || {}) };
-  const G = buildGraph(merged, edges);
-  if (!merged[from] || !merged[to]) {
-    return res.status(404).json({ error: "node not found" });
+    const vector = embed(q);
+    const result = await qdrant.search(COLLECTION, {
+      vector, limit: topK, with_payload: true, score_threshold: 0.0
+    });
+    const hits = (result||[]).map(h => ({ id:h.id, score:h.score, ...h.payload }));
+    res.json({ q, topK, hits });
+  }catch(e){
+    res.status(500).json({ error:"search failed", detail:String(e?.message||e) });
   }
-  const r = dijkstra(G, from, to);
-  if (!r) return res.status(404).json({ error: "no path" });
-  res.json({
-    path: r.path,
-    cost: r.cost,
-    coords: r.path.map(id => ({ id, ...merged[id] }))
-  });
+});
+
+// Reindex from Firestore → Qdrant (embed using latest logic)
+router.post("/reindex", async (_req,res)=>{
+  try{
+    if(!(await ensureQdrantReady(res))) return;
+    const snap = await db.collection("pois").get();
+    const points = [];
+    snap.forEach(doc=>{
+      const p = doc.data();
+      const aliases = Array.isArray(p.aliases) ? p.aliases.filter(Boolean) : [];
+      const text = [p.id, p.name, p.type, p.desc, ...aliases].filter(Boolean).join(" ");
+      points.push({
+        id: toPointIdStable(p.id),
+        vector: embed(text),
+        payload: p
+      });
+    });
+    // batch upsert (ถ้าเยอะควรแบ่งเป็นก้อน ๆ)
+    await qdrant.upsert(COLLECTION, { wait:true, points });
+    res.json({ ok:true, upserted: points.length });
+  }catch(e){
+    console.error("[/reindex]", e?.message||e);
+    res.status(500).json({ error:"reindex failed", detail:String(e?.message||e) });
+  }
 });
 
 module.exports = router;

@@ -1,0 +1,427 @@
+[
+  {
+    "from": "22",
+    "to": "ประตู2205 1",
+    "weight": 0.0
+  },
+  {
+    "from": "22",
+    "to": "23",
+    "weight": 1.621111
+  },
+  {
+    "from": "22",
+    "to": "ประตู 2205 2",
+    "weight": 1.621111
+  },
+  {
+    "from": "23",
+    "to": "ประตู 2205 2",
+    "weight": 0.0
+  },
+  {
+    "from": "23",
+    "to": "ประตู2205 1",
+    "weight": 1.621111
+  },
+  {
+    "from": "24",
+    "to": "2203",
+    "weight": 0.0
+  },
+  {
+    "from": "24",
+    "to": "25",
+    "weight": 1.56
+  },
+  {
+    "from": "24",
+    "to": "2204",
+    "weight": 1.56
+  },
+  {
+    "from": "25",
+    "to": "2204",
+    "weight": 0.0
+  },
+  {
+    "from": "25",
+    "to": "2203",
+    "weight": 1.56
+  },
+  {
+    "from": "26",
+    "to": "main",
+    "weight": 0.0
+  },
+  {
+    "from": "26",
+    "to": "36",
+    "weight": 3.451724
+  },
+  {
+    "from": "26",
+    "to": "Door N037",
+    "weight": 3.451724
+  },
+  {
+    "from": "27",
+    "to": "lab2",
+    "weight": 0.0
+  },
+  {
+    "from": "27",
+    "to": "31",
+    "weight": 1.442221
+  },
+  {
+    "from": "27",
+    "to": "lab5",
+    "weight": 1.442221
+  },
+  {
+    "from": "28",
+    "to": "lab1",
+    "weight": 0.0
+  },
+  {
+    "from": "28",
+    "to": "27",
+    "weight": 2.48129
+  },
+  {
+    "from": "28",
+    "to": "lab2",
+    "weight": 2.48129
+  },
+  {
+    "from": "29",
+    "to": "lab3",
+    "weight": 0.0
+  },
+  {
+    "from": "29",
+    "to": "30",
+    "weight": 1.38
+  },
+  {
+    "from": "29",
+    "to": "lab4",
+    "weight": 1.38
+  },
+  {
+    "from": "30",
+    "to": "lab4",
+    "weight": 0.0
+  },
+  {
+    "from": "30",
+    "to": "lab3",
+    "weight": 1.38
+  },
+  {
+    "from": "31",
+    "to": "lab5",
+    "weight": 0.0
+  },
+  {
+    "from": "31",
+    "to": "lab2",
+    "weight": 1.442221
+  },
+  {
+    "from": "32",
+    "to": "lab6",
+    "weight": 0.0
+  },
+  {
+    "from": "32",
+    "to": "31",
+    "weight": 2.45308
+  },
+  {
+    "from": "32",
+    "to": "lab5",
+    "weight": 2.45308
+  },
+  {
+    "from": "33",
+    "to": "Door N034",
+    "weight": 0.0
+  },
+  {
+    "from": "33",
+    "to": "44",
+    "weight": 2.953574
+  },
+  {
+    "from": "33",
+    "to": "Door N045",
+    "weight": 2.953574
+  },
+  {
+    "from": "34",
+    "to": "Door N035",
+    "weight": 0.0
+  },
+  {
+    "from": "34",
+    "to": "38",
+    "weight": 1.404279
+  },
+  {
+    "from": "34",
+    "to": "Door N039",
+    "weight": 1.404279
+  },
+  {
+    "from": "35",
+    "to": "Door N036",
+    "weight": 0.0
+  },
+  {
+    "from": "36",
+    "to": "Door N037",
+    "weight": 0.0
+  },
+  {
+    "from": "36",
+    "to": "37",
+    "weight": 2.240803
+  },
+  {
+    "from": "36",
+    "to": "Door N038",
+    "weight": 2.240803
+  },
+  {
+    "from": "37",
+    "to": "Door N038",
+    "weight": 0.0
+  },
+  {
+    "from": "37",
+    "to": "Door N037",
+    "weight": 2.240803
+  },
+  {
+    "from": "38",
+    "to": "Door N039",
+    "weight": 0.0
+  },
+  {
+    "from": "38",
+    "to": "Door N035",
+    "weight": 1.404279
+  },
+  {
+    "from": "39",
+    "to": "Door N040",
+    "weight": 0.0
+  },
+  {
+    "from": "39",
+    "to": "46",
+    "weight": 4.642155
+  },
+  {
+    "from": "39",
+    "to": "Door N047",
+    "weight": 4.642155
+  },
+  {
+    "from": "40",
+    "to": "Door N041",
+    "weight": 0.0
+  },
+  {
+    "from": "40",
+    "to": "41",
+    "weight": 2.743574
+  },
+  {
+    "from": "40",
+    "to": "Door N042",
+    "weight": 2.743574
+  },
+  {
+    "from": "41",
+    "to": "Door N042",
+    "weight": 0.0
+  },
+  {
+    "from": "41",
+    "to": "42",
+    "weight": 0.68
+  },
+  {
+    "from": "41",
+    "to": "Door N043",
+    "weight": 0.68
+  },
+  {
+    "from": "42",
+    "to": "Door N043",
+    "weight": 0.0
+  },
+  {
+    "from": "42",
+    "to": "Door N042",
+    "weight": 0.68
+  },
+  {
+    "from": "43",
+    "to": "Door N044",
+    "weight": 0.0
+  },
+  {
+    "from": "43",
+    "to": "42",
+    "weight": 2.082402
+  },
+  {
+    "from": "43",
+    "to": "Door N043",
+    "weight": 2.082402
+  },
+  {
+    "from": "44",
+    "to": "Door N045",
+    "weight": 0.0
+  },
+  {
+    "from": "44",
+    "to": "45",
+    "weight": 1.471462
+  },
+  {
+    "from": "44",
+    "to": "Door N046",
+    "weight": 1.471462
+  },
+  {
+    "from": "45",
+    "to": "Door N046",
+    "weight": 0.0
+  },
+  {
+    "from": "45",
+    "to": "Door N045",
+    "weight": 1.471462
+  },
+  {
+    "from": "46",
+    "to": "Door N047",
+    "weight": 0.0
+  },
+  {
+    "from": "46",
+    "to": "Door N040",
+    "weight": 4.642155
+  },
+  {
+    "from": "2203",
+    "to": "2204",
+    "weight": 1.56
+  },
+  {
+    "from": "ประตู2205 1",
+    "to": "ประตู 2205 2",
+    "weight": 1.621111
+  },
+  {
+    "from": "main",
+    "to": "36",
+    "weight": 3.451724
+  },
+  {
+    "from": "main",
+    "to": "Door N037",
+    "weight": 3.451724
+  },
+  {
+    "from": "lab2",
+    "to": "lab5",
+    "weight": 1.442221
+  },
+  {
+    "from": "lab1",
+    "to": "27",
+    "weight": 2.48129
+  },
+  {
+    "from": "lab1",
+    "to": "lab2",
+    "weight": 2.48129
+  },
+  {
+    "from": "lab3",
+    "to": "lab4",
+    "weight": 1.38
+  },
+  {
+    "from": "lab6",
+    "to": "31",
+    "weight": 2.45308
+  },
+  {
+    "from": "lab6",
+    "to": "lab5",
+    "weight": 2.45308
+  },
+  {
+    "from": "Door N034",
+    "to": "44",
+    "weight": 2.953574
+  },
+  {
+    "from": "Door N034",
+    "to": "Door N045",
+    "weight": 2.953574
+  },
+  {
+    "from": "Door N035",
+    "to": "Door N039",
+    "weight": 1.404279
+  },
+  {
+    "from": "Door N037",
+    "to": "Door N038",
+    "weight": 2.240803
+  },
+  {
+    "from": "Door N040",
+    "to": "Door N047",
+    "weight": 4.642155
+  },
+  {
+    "from": "Door N041",
+    "to": "41",
+    "weight": 2.743574
+  },
+  {
+    "from": "Door N041",
+    "to": "Door N042",
+    "weight": 2.743574
+  },
+  {
+    "from": "Door N042",
+    "to": "Door N043",
+    "weight": 0.68
+  },
+  {
+    "from": "Door N044",
+    "to": "42",
+    "weight": 2.082402
+  },
+  {
+    "from": "Door N044",
+    "to": "Door N043",
+    "weight": 2.082402
+  },
+  {
+    "from": "Door N045",
+    "to": "Door N046",
+    "weight": 1.471462
+  }
+]

@@ -1,27 +1,14 @@
-// backend/middleware/verifyFirebaseToken.js
+// why: ใช้กับ route ที่ต้อง auth
 const { auth } = require("../services/firebase");
-
-const ADMIN_EMAILS = ["admin@example.com"];
-
 async function verifyFirebaseToken(req, res, next) {
-  const authHeader = req.headers.authorization;
-  if (!authHeader || !authHeader.startsWith("Bearer ")) {
-    return res.status(401).json({ error: "No token provided" });
-  }
-
-  const token = authHeader.split(" ")[1];
-
+  const hdr = req.headers.authorization || "";
+  const token = hdr.startsWith("Bearer ") ? hdr.slice(7) : null;
+  if (!token) return res.status(401).json({ error: "missing bearer token" });
   try {
-    const decoded = await auth.verifyIdToken(token);
-    if (!ADMIN_EMAILS.includes(decoded.email)) {
-      return res.status(403).json({ error: "Access denied" });
-    }
-    req.user = decoded;
+    req.user = await auth.verifyIdToken(token);
     next();
-  } catch (err) {
-    console.error("Token error", err);
-    res.status(401).json({ error: "Invalid token" });
+  } catch (e) {
+    res.status(401).json({ error: "invalid token" });
   }
 }
-
 module.exports = verifyFirebaseToken;
