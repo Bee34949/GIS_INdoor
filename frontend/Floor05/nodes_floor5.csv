@@ -1,7 +1,7 @@
 id,x,y,name,type,floor
 N144,2376.0,711.0,ห้องบรรยาย 2507 (2),room,5
 N145,2376.0,974.0,ห้องบรรยาย 2507 (1),room,5
-N146,2373.0,1171.0,ห้องMATH&STAT LEARNING CENTER,room,5
+N146,2373.0,1171.0,ห้องMATHSTAT LEARNING CENTER,room,5
 N147,2001.0,1046.0,ห้องบรรยาย 2503,room,5
 N148,1998.0,908.0,ห้องบรรยาย 2504,room,5
 N149,2001.0,702.0,ห้องบรรยาย 2506,room,5
@@ -42,3 +42,55 @@ N183,1623.0,708.0,Door N183,door,5
 N184,1129.0,739.0,Door N184,door,5
 N185,1060.0,711.0,Door N185,door,5
 N186,1266.0,1136.0,Door N186,door,5
+N464,1313.0,743.0,corr N464,corridor,5
+N465,1313.0,1168.0,corr N465,corridor,5
+N466,1313.0,793.0,corr N466,corridor,5
+N467,1313.0,843.0,corr N467,corridor,5
+N468,1313.0,893.0,corr N468,corridor,5
+N469,1313.0,943.0,corr N469,corridor,5
+N470,1313.0,993.0,corr N470,corridor,5
+N471,1313.0,1043.0,corr N471,corridor,5
+N472,1313.0,1093.0,corr N472,corridor,5
+N473,2188.0,1171.0,corr N473,corridor,5
+N474,1363.0,1168.0,corr N474,corridor,5
+N475,1413.0,1168.0,corr N475,corridor,5
+N476,1463.0,1169.0,corr N476,corridor,5
+N477,1513.0,1169.0,corr N477,corridor,5
+N478,1563.0,1169.0,corr N478,corridor,5
+N479,1613.0,1169.0,corr N479,corridor,5
+N480,1663.0,1169.0,corr N480,corridor,5
+N481,1713.0,1169.0,corr N481,corridor,5
+N482,1763.0,1170.0,corr N482,corridor,5
+N483,1813.0,1170.0,corr N483,corridor,5
+N484,1863.0,1170.0,corr N484,corridor,5
+N485,1913.0,1170.0,corr N485,corridor,5
+N486,1963.0,1170.0,corr N486,corridor,5
+N487,2013.0,1170.0,corr N487,corridor,5
+N488,2063.0,1171.0,corr N488,corridor,5
+N489,2113.0,1171.0,corr N489,corridor,5
+N490,2188.0,684.0,corr N490,corridor,5
+N491,2188.0,1121.0,corr N491,corridor,5
+N492,2188.0,1071.0,corr N492,corridor,5
+N493,2188.0,1021.0,corr N493,corridor,5
+N494,2188.0,971.0,corr N494,corridor,5
+N495,2188.0,921.0,corr N495,corridor,5
+N496,2188.0,871.0,corr N496,corridor,5
+N497,2188.0,821.0,corr N497,corridor,5
+N498,2188.0,771.0,corr N498,corridor,5
+N499,1613.0,728.0,corr N499,corridor,5
+N500,1613.0,1069.0,corr N500,corridor,5
+N501,1613.0,1019.0,corr N501,corridor,5
+N502,1613.0,969.0,corr N502,corridor,5
+N503,1613.0,919.0,corr N503,corridor,5
+N504,1613.0,819.0,corr N504,corridor,5
+N505,1313.0,1134.0,corr N505,corridor,5
+N506,1110.0,1134.0,corr N506,corridor,5
+N507,1213.0,1134.0,corr N507,corridor,5
+N508,1163.0,1134.0,corr N508,corridor,5
+N509,1116.0,1053.0,corr N509,corridor,5
+N510,1163.0,1018.0,corr N510,corridor,5
+N511,1163.0,743.0,corr N511,corridor,5
+N512,1163.0,968.0,corr N512,corridor,5
+N513,1163.0,918.0,corr N513,corridor,5
+N514,1163.0,868.0,corr N514,corridor,5
+N515,1163.0,818.0,corr N515,corridor,5

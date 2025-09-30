@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <core:IndoorFeatures xmlns:core="http://www.opengis.net/indoorgml/1.0/core" xmlns:gml="http://www.opengis.net/gml/3.2">
   <core:multiLayeredGraph>
     <core:MultiLayeredGraph gml:id="mlg_1">
@@ -1696,7 +1696,7 @@
         <gml:description>{"type":"junction","floor":1}</gml:description>
         <core:dualGraph><gml:Point gml:id="pt_1_N275"><gml:pos>1598 812</gml:pos></gml:Point></core:dualGraph>
       </core:State>
-    </core:stateMember></core:Nodes></core:nodes><core:edges><core:Edges></core:Edges></core:SpaceLayer></core:spaceLayerMember><core:spaceLayerMember><core:SpaceLayer gml:id="layer_2"><core:nodes><core:Nodes>
+    </core:stateMember></core:Nodes></core:nodes><core:edges><core:Edges/></core:edges></core:SpaceLayer><core:spaceLayerMember><core:SpaceLayer gml:id="layer_2"><core:nodes><core:Nodes>
     <core:stateMember>
       <core:State gml:id="state_2_0">
         <gml:name>ห้อง2205</gml:name>
@@ -4034,7 +4034,7 @@
         <gml:description>{"type":"junction","floor":2}</gml:description>
         <core:dualGraph><gml:Point gml:id="pt_2_walk N395"><gml:pos>1028 1528</gml:pos></gml:Point></core:dualGraph>
       </core:State>
-    </core:stateMember></core:Nodes></core:nodes><core:edges><core:Edges></core:Edges></core:SpaceLayer></core:spaceLayerMember><core:spaceLayerMember><core:SpaceLayer gml:id="layer_3"><core:nodes><core:Nodes>
+    </core:stateMember></core:Nodes></core:nodes><core:edges><core:Edges/></core:edges></core:SpaceLayer><core:spaceLayerMember><core:SpaceLayer gml:id="layer_3"><core:nodes><core:Nodes>
     <core:stateMember>
       <core:State gml:id="state_3_N001">
         <gml:name>ห้องบรรยายเคมี 1 2309</gml:name>
@@ -6134,7 +6134,7 @@
         <gml:description>{"type":"corridor","floor":3}</gml:description>
         <core:dualGraph><gml:Point gml:id="pt_3_N362"><gml:pos>2329 1187</gml:pos></gml:Point></core:dualGraph>
       </core:State>
-    </core:stateMember></core:Nodes></core:nodes><core:edges><core:Edges></core:Edges></core:SpaceLayer></core:spaceLayerMember><core:spaceLayerMember><core:SpaceLayer gml:id="layer_4"><core:nodes><core:Nodes>
+    </core:stateMember></core:Nodes></core:nodes><core:edges><core:Edges/></core:edges></core:SpaceLayer><core:spaceLayerMember><core:SpaceLayer gml:id="layer_4"><core:nodes><core:Nodes>
     <core:stateMember>
       <core:State gml:id="state_4_N064">
         <gml:name>ห้องปฏิบัติการทางสิ่งแวดล้อม</gml:name>
@@ -8668,7 +8668,7 @@
         <gml:description>{"type":"corridor","floor":4}</gml:description>
         <core:dualGraph><gml:Point gml:id="pt_4_N463"><gml:pos>1147 1537</gml:pos></gml:Point></core:dualGraph>
       </core:State>
-    </core:stateMember></core:Nodes></core:nodes><core:edges><core:Edges></core:Edges></core:SpaceLayer></core:spaceLayerMember><core:spaceLayerMember><core:SpaceLayer gml:id="layer_5"><core:nodes><core:Nodes>
+    </core:stateMember></core:Nodes></core:nodes><core:edges><core:Edges/></core:edges></core:SpaceLayer><core:spaceLayerMember><core:SpaceLayer gml:id="layer_5"><core:nodes><core:Nodes>
     <core:stateMember>
       <core:State gml:id="state_5_N144">
         <gml:name>ห้องบรรยาย 2507 (2)</gml:name>
@@ -8685,7 +8685,7 @@
     </core:stateMember>
     <core:stateMember>
       <core:State gml:id="state_5_N146">
-        <gml:name>ห้องMATH&amp;STAT LEARNING CENTER</gml:name>
+        <gml:name>ห้องMATHSTAT LEARNING CENTER</gml:name>
         <gml:description>{"type":"room","floor":5}</gml:description>
         <core:dualGraph><gml:Point gml:id="pt_5_N146"><gml:pos>2373 1171</gml:pos></gml:Point></core:dualGraph>
       </core:State>
@@ -8986,7 +8986,7 @@
     </core:stateMember>
     <core:stateMember>
       <core:State gml:id="state_5_N146">
-        <gml:name>ห้องMATH&amp;STAT LEARNING CENTER</gml:name>
+        <gml:name>ห้องMATHSTAT LEARNING CENTER</gml:name>
         <gml:description>{"type":"room","floor":5}</gml:description>
         <core:dualGraph><gml:Point gml:id="pt_5_N146"><gml:pos>2373 1171</gml:pos></gml:Point></core:dualGraph>
       </core:State>
@@ -9638,374 +9638,374 @@
     <core:transitionMember>
       <core:Transition gml:id="tr_5_0">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N464" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N466"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N464"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N466"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_1">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N466" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N467"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N466"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N467"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_2">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N467" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N468"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N467"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N468"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_3">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N468" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N469"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N468"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N469"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_4">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N469" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N470"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N469"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N470"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_5">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N470" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N471"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N470"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N471"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_6">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N471" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N472"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N471"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N472"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_7">
         <core:weight>1.500</core:weight>
-        <core:connects xlink:href="#state_5_N472" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N465"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N472"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N465"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_8">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N465" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N474"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N465"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N474"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_9">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N474" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N475"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N474"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N475"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_10">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N475" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N476"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N475"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N476"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_11">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N476" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N477"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N476"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N477"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_12">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N477" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N478"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N477"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N478"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_13">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N478" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N479"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N478"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N479"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_14">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N479" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N480"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N479"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N480"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_15">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N480" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N481"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N480"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N481"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_16">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N481" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N482"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N481"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N482"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_17">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N482" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N483"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N482"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N483"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_18">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N483" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N484"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N483"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N484"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_19">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N484" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N485"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N484"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N485"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_20">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N485" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N486"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N485"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N486"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_21">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N486" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N487"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N486"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N487"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_22">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N487" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N488"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N487"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N488"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_23">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N488" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N489"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N488"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N489"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_24">
         <core:weight>1.500</core:weight>
-        <core:connects xlink:href="#state_5_N489" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N473"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N489"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N473"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_25">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N473" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N491"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N473"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N491"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_26">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N491" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N492"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N491"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N492"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_27">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N492" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N493"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N492"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N493"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_28">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N493" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N494"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N493"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N494"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_29">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N494" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N495"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N494"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N495"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_30">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N495" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N496"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N495"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N496"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_31">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N496" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N497"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N496"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N497"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_32">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N497" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N498"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N497"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N498"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_33">
         <core:weight>1.740</core:weight>
-        <core:connects xlink:href="#state_5_N498" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N490"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N498"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N490"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_34">
         <core:weight>0.962</core:weight>
-        <core:connects xlink:href="#state_5_N479" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_32"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N479"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_32"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_35">
         <core:weight>1.042</core:weight>
-        <core:connects xlink:href="#state_5_32" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N500"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_32"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N500"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_36">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N500" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N501"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N500"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N501"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_37">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N501" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N502"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N501"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N502"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_38">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N502" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N503"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N502"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N503"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_39">
         <core:weight>1.166</core:weight>
-        <core:connects xlink:href="#state_5_N503" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_36"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N503"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_36"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_40">
         <core:weight>0.849</core:weight>
-        <core:connects xlink:href="#state_5_36" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N504"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_36"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N504"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_41">
         <core:weight>1.820</core:weight>
-        <core:connects xlink:href="#state_5_N504" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N499"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N504"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N499"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_42">
         <core:weight>0.941</core:weight>
-        <core:connects xlink:href="#state_5_N505" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_42"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N505"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_42"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_43">
         <core:weight>1.061</core:weight>
-        <core:connects xlink:href="#state_5_42" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N507"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_42"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N507"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_44">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N507" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N508"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N507"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N508"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_45">
         <core:weight>1.060</core:weight>
-        <core:connects xlink:href="#state_5_N508" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N506"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N508"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N506"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_46">
         <core:weight>1.624</core:weight>
-        <core:connects xlink:href="#state_5_N506" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N509"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N506"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N509"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_47">
         <core:weight>1.172</core:weight>
-        <core:connects xlink:href="#state_5_N509" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N510"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N509"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N510"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_48">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N510" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N512"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N510"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N512"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_49">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N512" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N513"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N512"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N513"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_50">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N513" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N514"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N513"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N514"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_51">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N514" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N515"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N514"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N515"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
       <core:Transition gml:id="tr_5_52">
         <core:weight>1.500</core:weight>
-        <core:connects xlink:href="#state_5_N515" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N511"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N515"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_5_N511"/>
       </core:Transition>
-    </core:transitionMember></core:Edges></core:SpaceLayer></core:spaceLayerMember><core:spaceLayerMember><core:SpaceLayer gml:id="layer_6"><core:nodes><core:Nodes>
+    </core:transitionMember></core:Edges></core:edges></core:SpaceLayer><core:spaceLayerMember><core:SpaceLayer gml:id="layer_6"><core:nodes><core:Nodes>
     <core:stateMember>
       <core:State gml:id="state_6_N144">
         <gml:name>ห้องบรรยายคอมพิวเตอร์ 8</gml:name>
@@ -10593,8 +10593,8 @@
         <gml:description>{"type":"door","floor":6}</gml:description>
         <core:dualGraph><gml:Point gml:id="pt_6_N185"><gml:pos>2404 921</gml:pos></gml:Point></core:dualGraph>
       </core:State>
-    </core:stateMember></core:Nodes></core:nodes><core:edges><core:Edges></core:Edges></core:SpaceLayer></core:spaceLayerMember></core:SpaceLayers></core:spaceLayers>
+    </core:stateMember></core:Nodes></core:nodes><core:edges><core:Edges/></core:edges></core:SpaceLayer></core:spaceLayerMember></core:spaceLayerMember>
       
-    </core:MultiLayeredGraph>
-  </core:multiLayeredGraph>
-</core:IndoorFeatures>
+    </core:spaceLayerMember>
+  </core:spaceLayerMember>
+</core:spaceLayerMember></core:spaceLayerMember></core:SpaceLayers></core:spaceLayers></core:MultiLayeredGraph></core:multiLayeredGraph></core:IndoorFeatures>

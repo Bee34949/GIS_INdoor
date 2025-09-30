@@ -17,7 +17,7 @@
     "N146": {
       "x": 2373.0,
       "y": 1171.0,
-      "name": "ห้องMATH&STAT LEARNING CENTER",
+      "name": "ห้องMATHSTAT LEARNING CENTER",
       "type": "room",
       "floor": 5
     },
@@ -299,6 +299,370 @@
       "y": 1136.0,
       "name": "Door N186",
       "type": "door",
+      "floor": 5
+    },
+    "N464": {
+      "x": 1313.0,
+      "y": 743.0,
+      "name": "corr N464",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N465": {
+      "x": 1313.0,
+      "y": 1168.0,
+      "name": "corr N465",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N466": {
+      "x": 1313.0,
+      "y": 793.0,
+      "name": "corr N466",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N467": {
+      "x": 1313.0,
+      "y": 843.0,
+      "name": "corr N467",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N468": {
+      "x": 1313.0,
+      "y": 893.0,
+      "name": "corr N468",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N469": {
+      "x": 1313.0,
+      "y": 943.0,
+      "name": "corr N469",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N470": {
+      "x": 1313.0,
+      "y": 993.0,
+      "name": "corr N470",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N471": {
+      "x": 1313.0,
+      "y": 1043.0,
+      "name": "corr N471",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N472": {
+      "x": 1313.0,
+      "y": 1093.0,
+      "name": "corr N472",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N473": {
+      "x": 2188.0,
+      "y": 1171.0,
+      "name": "corr N473",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N474": {
+      "x": 1363.0,
+      "y": 1168.0,
+      "name": "corr N474",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N475": {
+      "x": 1413.0,
+      "y": 1168.0,
+      "name": "corr N475",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N476": {
+      "x": 1463.0,
+      "y": 1169.0,
+      "name": "corr N476",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N477": {
+      "x": 1513.0,
+      "y": 1169.0,
+      "name": "corr N477",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N478": {
+      "x": 1563.0,
+      "y": 1169.0,
+      "name": "corr N478",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N479": {
+      "x": 1613.0,
+      "y": 1169.0,
+      "name": "corr N479",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N480": {
+      "x": 1663.0,
+      "y": 1169.0,
+      "name": "corr N480",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N481": {
+      "x": 1713.0,
+      "y": 1169.0,
+      "name": "corr N481",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N482": {
+      "x": 1763.0,
+      "y": 1170.0,
+      "name": "corr N482",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N483": {
+      "x": 1813.0,
+      "y": 1170.0,
+      "name": "corr N483",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N484": {
+      "x": 1863.0,
+      "y": 1170.0,
+      "name": "corr N484",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N485": {
+      "x": 1913.0,
+      "y": 1170.0,
+      "name": "corr N485",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N486": {
+      "x": 1963.0,
+      "y": 1170.0,
+      "name": "corr N486",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N487": {
+      "x": 2013.0,
+      "y": 1170.0,
+      "name": "corr N487",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N488": {
+      "x": 2063.0,
+      "y": 1171.0,
+      "name": "corr N488",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N489": {
+      "x": 2113.0,
+      "y": 1171.0,
+      "name": "corr N489",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N490": {
+      "x": 2188.0,
+      "y": 684.0,
+      "name": "corr N490",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N491": {
+      "x": 2188.0,
+      "y": 1121.0,
+      "name": "corr N491",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N492": {
+      "x": 2188.0,
+      "y": 1071.0,
+      "name": "corr N492",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N493": {
+      "x": 2188.0,
+      "y": 1021.0,
+      "name": "corr N493",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N494": {
+      "x": 2188.0,
+      "y": 971.0,
+      "name": "corr N494",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N495": {
+      "x": 2188.0,
+      "y": 921.0,
+      "name": "corr N495",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N496": {
+      "x": 2188.0,
+      "y": 871.0,
+      "name": "corr N496",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N497": {
+      "x": 2188.0,
+      "y": 821.0,
+      "name": "corr N497",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N498": {
+      "x": 2188.0,
+      "y": 771.0,
+      "name": "corr N498",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N499": {
+      "x": 1613.0,
+      "y": 728.0,
+      "name": "corr N499",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N500": {
+      "x": 1613.0,
+      "y": 1069.0,
+      "name": "corr N500",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N501": {
+      "x": 1613.0,
+      "y": 1019.0,
+      "name": "corr N501",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N502": {
+      "x": 1613.0,
+      "y": 969.0,
+      "name": "corr N502",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N503": {
+      "x": 1613.0,
+      "y": 919.0,
+      "name": "corr N503",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N504": {
+      "x": 1613.0,
+      "y": 819.0,
+      "name": "corr N504",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N505": {
+      "x": 1313.0,
+      "y": 1134.0,
+      "name": "corr N505",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N506": {
+      "x": 1110.0,
+      "y": 1134.0,
+      "name": "corr N506",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N507": {
+      "x": 1213.0,
+      "y": 1134.0,
+      "name": "corr N507",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N508": {
+      "x": 1163.0,
+      "y": 1134.0,
+      "name": "corr N508",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N509": {
+      "x": 1116.0,
+      "y": 1053.0,
+      "name": "corr N509",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N510": {
+      "x": 1163.0,
+      "y": 1018.0,
+      "name": "corr N510",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N511": {
+      "x": 1163.0,
+      "y": 743.0,
+      "name": "corr N511",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N512": {
+      "x": 1163.0,
+      "y": 968.0,
+      "name": "corr N512",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N513": {
+      "x": 1163.0,
+      "y": 918.0,
+      "name": "corr N513",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N514": {
+      "x": 1163.0,
+      "y": 868.0,
+      "name": "corr N514",
+      "type": "corridor",
+      "floor": 5
+    },
+    "N515": {
+      "x": 1163.0,
+      "y": 818.0,
+      "name": "corr N515",
+      "type": "corridor",
       "floor": 5
     }
   }

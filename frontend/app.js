@@ -1,10 +1,10 @@
 // FILE: frontend/app.js
+// Indoor Map — +Search, +Blink, +Toast, +Undo/Redo, +Minimap, +Measure, +Shortcuts
 
 // ---------- Config & Utils ----------
-const PX_PER_M = 50; // 50 px = 1 m
-const STEP_PX = 50;   // corridor spacing (px)
-const SNAP_TOL = 12;  // snap radius for reusing nodes
-
+let PX_PER_M = Number(localStorage.getItem('PX_PER_M') || 50);
+const STEP_PX = 50;
+const SNAP_TOL = 12;
 
 const FLOORS = [1, 2, 3, 4, 5, 6];
 const STAIRS = new Set(["stair_left", "stair_mid", "stair_right", "stair"]);
@@ -31,18 +31,109 @@ const clampFloor = (f) => (FLOORS.includes(Number(f)) ? Number(f) : FLOORS[0]);
 const distPx = (a, b) => Math.hypot((a?.x || 0) - (b?.x || 0), (a?.y || 0) - (b?.y || 0));
 const distM = (a, b) => distPx(a, b) / PX_PER_M;
 
+function debounce(fn, ms) { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; }
+function escapeHtml(s) { return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function setPxPerM(val){
+  const v = Math.max(1, Math.round(Number(val) || 50));
+  PX_PER_M = v;
+  try { localStorage.setItem('PX_PER_M', String(v)); } catch {}
+  recomputeAllCorridorWeights();
+  const lbl = document.getElementById('lbl-scale'); if (lbl) lbl.textContent = `${v} px/m`;
+  const inp = document.getElementById('inp-scale'); if (inp) inp.value = String(v);
+  if (typeof redrawAll === 'function') redrawAll();
+  if (typeof ccToast === 'function') ccToast(`Scale set to ${v} px/m`);
+}
+function recomputeAllCorridorWeights(){
+  // ทำให้น้ำหนัก edge ของ corridor เป็น "เมตร" ตาม PX_PER_M ปัจจุบัน
+  if (!window.adminEdges || !window.adminNodes) return;
+  for (const f of (window.FLOORS || [])){
+    const edges = adminEdges[f] || [];
+    const nodes = adminNodes[f] || {};
+    for (const e of edges){
+      const a = nodes[e.from], b = nodes[e.to];
+      if (a && b) e.weight = Math.hypot(a.x - b.x, a.y - b.y) / PX_PER_M;
+    }
+  }
+}
+// ---------- Toast (UX feedback) ----------
+(function mountToast(){
+  if (byId('cc-toasts')) return;
+  const wrap = document.createElement('div');
+  wrap.id = 'cc-toasts';
+  wrap.style.cssText = 'position:fixed;right:16px;bottom:16px;display:flex;flex-direction:column;gap:8px;z-index:9999';
+  document.body.appendChild(wrap);
+  window.ccToast = (msg, ms=1600) => {
+    const el = document.createElement('div');
+    el.className = 'cc-toast';
+    el.textContent = msg;
+    el.style.cssText = 'background:#111;color:#fff;padding:.6rem .8rem;border-radius:.5rem;box-shadow:0 6px 20px rgba(0,0,0,.25);font-size:.9rem;opacity:.98';
+    wrap.appendChild(el);
+    setTimeout(()=>{ el.style.opacity='0'; el.style.transition='opacity .25s'; }, ms);
+    setTimeout(()=> wrap.removeChild(el), ms+260);
+  };
+})();
+
+// ---------- History (snapshot-based Undo/Redo) ----------
+class History {
+  constructor(limit=200){ this.limit=limit; this.stack=[]; this.idx=-1; }
+  push(doState, undoState, label='Change'){
+    // why: snapshot restore keeps logic simple/robust
+    this.stack = this.stack.slice(0, this.idx+1);
+    this.stack.push({ doState, undoState, label });
+    if (this.stack.length > this.limit) this.stack.shift(); else this.idx++;
+    this.apply(doState); window.ccToast?.(`✓ ${label}`);
+  }
+  apply(snap){ setSnapshot(snap); }
+  canUndo(){ return this.idx>=0; }
+  canRedo(){ return this.idx < this.stack.length-1; }
+  undo(){ if(!this.canUndo()) return; const rec=this.stack[this.idx]; this.apply(rec.undoState); this.idx--; window.ccToast?.('↩ Undo'); }
+  redo(){ if(!this.canRedo()) return; const rec=this.stack[this.idx+1]; this.apply(rec.doState); this.idx++; window.ccToast?.('↪ Redo'); }
+}
+const ccHistory = new History();
+
+// capture/restore whole admin-editing state (cheap & safe for editor-sized data)
+function captureSnapshot(){
+  return {
+    nodes: deepClone(adminNodes),
+    edges: deepClone(adminEdges),
+    inter: deepClone(interEdges),
+    selected: selected ? { ...selected } : null,
+    floor: currentFloor
+  };
+}
+function setSnapshot(s){
+  adminNodes = deepClone(s.nodes);
+  adminEdges = deepClone(s.edges);
+  interEdges = deepClone(s.inter);
+  selected = s.selected ? { ...s.selected } : null;
+  currentFloor = s.floor;
+  redrawAll(); renderInspector(); updateInterCount();
+}
+function recordChange(label, mutator){
+  const before = captureSnapshot();
+  mutator(); // perform change once
+  const after = captureSnapshot();
+  ccHistory.push(after, before, label);
+}
+
 // ---------- App State ----------
 let currentPage = null;
 let currentFloor = 1;
 let baseNodes = makeFloorMap({});
 let adminNodes = makeFloorMap({});
-let adminEdges = makeFloorMap([]); // same-floor edges
-let interEdges = []; // [{from:{floor,id}, to:{floor,id}, type}]
+let adminEdges = makeFloorMap([]);
+let interEdges = [];
 let tool = "select", connectBuffer = [], dragging = null, selected = null;
 
 // Corridor
 let corridorBuffer = [];
 let corridorActive = false;
+
+// Search index
+let SEARCH_IDX = []; // [{floor,id,name,type,x,y, norm, tokens}]
+
+// Measure / Minimap runtime
+let measureOn = false, measureStart = null;
 
 // ---------- Graph Helpers ----------
 const keyOf = (f, id) => `${f}::${id}`;
@@ -347,18 +438,37 @@ function navigate(page) {
   currentPage = page;
   const app = byId("app");
 
+  // mount help/minimap/measure overlays on first navigation
+  if (!byId('cc-help')) mountHelpAndOverlays();
+
   if (page === "map") {
     const floorOpts = FLOORS.map(f => `<option value="${f}">Floor ${f}</option>`).join("");
     app.innerHTML = `
+      <style>
+        .search-wrap{ position:relative; }
+        .search-input{ border:1px solid #d1d5db; padding:.5rem .75rem; border-radius:.375rem; width:18rem; }
+        .suggest{ position:absolute; top:100%; left:0; right:0; background:#fff; border:1px solid #e5e7eb; border-top:none; border-radius:0 0 .5rem .5rem; max-height:16rem; overflow:auto; z-index:20; display:none; }
+        .suggest.show{ display:block; }
+        .suggest-item{ padding:.5rem .75rem; cursor:pointer; font-size:.9rem; display:flex; align-items:center; gap:.5rem; }
+        .suggest-item:hover, .suggest-item.active{ background:#f3f4f6; }
+        .badge{ font-size:.7rem; padding:.1rem .35rem; border:1px solid #e5e7eb; border-radius:.25rem; color:#374151; }
+      </style>
       <div class="grid grid-cols-12 gap-4">
-        <div class="col-span-9">
+        <div class="col-span-9 relative">
           <div class="flex items-center justify-between mb-3">
             <div class="flex items-center gap-2">
               <label>ชั้นที่ดู:</label>
               <select id="view-floor" class="border p-2 rounded">${floorOpts}</select>
               <button id="btnClear" class="px-3 py-2 border rounded">Clear</button>
             </div>
-            <button id="goAdmin" class="px-3 py-2 rounded bg-yellow-600 text-white">Admin</button>
+            <div class="flex items-center gap-3">
+              <div class="search-wrap">
+                <input id="room-search" class="search-input" placeholder="ค้นหาห้อง / id / type (เช่น Room 101, N012, door)"/>
+                <div id="room-suggest" class="suggest"></div>
+              </div>
+              <button id="goAdmin" class="px-3 py-2 rounded bg-yellow-600 text-white">Admin</button>
+              <button id="btnHelp" title="Shortcuts (?)" class="px-3 py-2 border rounded">?</button>
+            </div>
           </div>
 
           <fieldset class="border rounded p-3 mb-3">
@@ -381,11 +491,14 @@ function navigate(page) {
             </div>
             <div class="mt-3 flex gap-2">
               <button id="btnXFloor" class="px-4 py-2 bg-indigo-600 text-white rounded">หาเส้นทาง (ข้ามชั้น)</button>
-              <span class="text-sm text-gray-600">* คำนวณระยะเป็นเมตร (50px/เมตร)</span>
+              <span class="text-sm text-gray-600">* 50px/เมตร • กด <b>M</b> เพื่อวัดระยะ • <b>Space+ลาก</b> เพื่อแพน</span>
             </div>
           </fieldset>
 
           <div id="svg-container" class="border bg-white shadow"></div>
+
+          <div id="cc-mm" class="cc-minimap cc-mm-hide" aria-hidden="true" style="position:absolute;right:16px;bottom:16px;width:220px;height:160px;border:1px solid #e5e7eb;background:#fff;border-radius:.5rem;box-shadow:0 2px 10px rgba(0,0,0,.08);overflow:hidden"></div>
+          <div id="cc-measure" class="cc-measure cc-mm-hide" style="position:absolute;left:16px;bottom:16px;background:#fff;border:1px solid #e5e7eb;border-radius:.5rem;padding:.35rem .6rem;box-shadow:0 2px 8px rgba(0,0,0,.08);font-size:.85rem">0 m</div>
 
           <div class="mt-4">
             <h3 class="font-semibold mb-2">แผนที่ชั้นที่ใช้ในเส้นทาง</h3>
@@ -403,10 +516,14 @@ function navigate(page) {
 
     (async () => {
       await ensureBaseData();
+      rebuildSearchIndex();
       const vf = byId("view-floor"); if (vf) vf.value = String(currentFloor);
       await loadFloor(currentFloor, false);
       syncNodeDropdown("sfloor", "snode");
       syncNodeDropdown("gfloor", "gnode");
+      ensureBlinkStyles();
+
+      on("btnHelp","click", ()=>toggleHelp(true));
 
       on("view-floor", "change", (e) => {
         const f = +e.target.value;
@@ -428,35 +545,50 @@ function navigate(page) {
         showSteps(res.steps);
         renderMultiFloorRoute(res.segments, res.meta);
       });
+
+      setupSearchUI();
     })();
     return;
   }
 
   if (page === "admin") {
     const floorOpts = FLOORS.map(f => `<option value="${f}">Floor ${f}</option>`).join("");
-    app.innerHTML = `
-      <style>.tool-active{ background:#1f2937; color:#fff; }</style>
-      <div class="flex items-center justify-between mb-3">
-        <div class="flex gap-2 items-center">
-          <select id="floor-select" class="border p-2 rounded">${floorOpts}</select>
-          <button id="tool-select"   class="px-3 py-2 rounded border">Select</button>
-          <button id="tool-room"     class="px-3 py-2 rounded border">Add Room</button>
-          <button id="tool-door"     class="px-3 py-2 rounded border">Add Door</button>
-          <button id="tool-junction" class="px-3 py-2 rounded border">Add Junction</button>
-          <button id="tool-corridor" class="px-3 py-2 rounded border">Add Corridor Path</button>
-          <button id="tool-connect"  class="px-3 py-2 rounded border">Connect</button>
-          <button id="tool-delete"   class="px-3 py-2 rounded border">Delete</button>
-          <button id="tool-clear"    class="px-3 py-2 rounded border">Clear Edges</button>
-          <button id="tool-apply"    class="px-3 py-2 rounded border bg-indigo-600 text-white">Apply</button>
-          <button id="tool-reset"    class="px-3 py-2 rounded border">Reset</button>
-          <button id="tool-export"   class="px-3 py-2 rounded border bg-green-600 text-white">Export GML</button>
-        </div>
-        <button id="backMap" class="px-3 py-2 rounded bg-gray-700 text-white">Back</button>
+app.innerHTML = `
+  <style>.tool-active{ background:#1f2937; color:#fff; }</style>
+  <div class="flex items-center justify-between mb-3">
+    <div class="flex gap-2 items-center">
+      <select id="floor-select" class="border p-2 rounded">${floorOpts}</select>
+      <button id="tool-select"   class="px-3 py-2 rounded border">Select</button>
+      <button id="tool-room"     class="px-3 py-2 rounded border">Add Room</button>
+      <button id="tool-door"     class="px-3 py-2 rounded border">Add Door</button>
+      <button id="tool-junction" class="px-3 py-2 rounded border">Add Junction</button>
+      <button id="tool-corridor" class="px-3 py-2 rounded border">Add Corridor Path</button>
+      <button id="tool-connect"  class="px-3 py-2 rounded border">Connect</button>
+      <button id="tool-delete"   class="px-3 py-2 rounded border">Delete</button>
+      <button id="tool-clear"    class="px-3 py-2 rounded border">Clear Edges</button>
+      <button id="tool-apply"    class="px-3 py-2 rounded border bg-indigo-600 text-white">Apply</button>
+      <button id="tool-reset"    class="px-3 py-2 rounded border">Reset</button>
+      <button id="tool-export"   class="px-3 py-2 rounded border bg-green-600 text-white">Export GML</button>
+    </div>
+    <div class="flex items-center gap-3">
+      <div class="flex items-center gap-2">
+        <label for="inp-scale" class="text-sm">Scale</label>
+        <input id="inp-scale" type="number" min="1" step="1" class="w-20 border p-1 rounded"/>
+        <span class="text-sm text-gray-600">px/m</span>
       </div>
-      <div class="mb-2 text-sm text-gray-600">Corridor: คลิกต่อเนื่อง ดับเบิลคลิก/คลิกขวาเพื่อจบ • น้ำหนักเป็นเมตร (50px/เมตร)</div>
-      <div class="grid grid-cols-12 gap-4">
-        <div class="col-span-9">
+      <button id="btnHelp" title="Shortcuts (?)" class="px-3 py-2 border rounded">?</button>
+      <button id="backMap" class="px-3 py-2 rounded bg-gray-700 text-white">Back</button>
+    </div>
+  </div>
+  <!-- เปลี่ยนคำว่า 50px/เมตร เป็น label แบบ dynamic -->
+  <div class="mb-2 text-sm text-gray-600">
+    Corridor: คลิกต่อเนื่อง ดับเบิลคลิก/คลิกขวาเพื่อจบ • น้ำหนักเป็นเมตร (<span id="lbl-scale"></span>)
+  </div>
+  <div class="grid grid-cols-12 gap-4">
+        <div class="col-span-9 relative">
           <div id="svg-container" class="border bg-white shadow"></div>
+          <div id="cc-mm" class="cc-minimap cc-mm-hide" aria-hidden="true" style="position:absolute;right:16px;bottom:16px;width:220px;height:160px;border:1px solid #e5e7eb;background:#fff;border-radius:.5rem;box-shadow:0 2px 10px rgba(0,0,0,.08);overflow:hidden"></div>
+          <div id="cc-measure" class="cc-measure cc-mm-hide" style="position:absolute;left:16px;bottom:16px;background:#fff;border:1px solid #e5e7eb;border-radius:.5rem;padding:.35rem .6rem;box-shadow:0 2px 8px rgba(0,0,0,.08);font-size:.85rem">0 m</div>
         </div>
         <aside class="col-span-3">
           <div class="bg-white rounded-lg shadow p-4 sticky top-4" id="inspector">
@@ -468,7 +600,7 @@ function navigate(page) {
               <option value="room">room</option><option value="door">door</option>
               <option value="junction">junction</option><option value="corridor">corridor</option>
               <option value="stair_left">stair_left</option>
-              <option value="stair_mid">stair_mid"></option><option value="stair_right">stair_right</option>
+              <option value="stair_mid">stair_mid</option><option value="stair_right">stair_right</option>
               <option value="stair">stair</option><option value="elevator">elevator</option>
             </select>
             <div class="flex gap-2 mt-3">
@@ -484,11 +616,21 @@ function navigate(page) {
         </aside>
       </div>`;
 
+      {
+      const initScale = Number(localStorage.getItem('PX_PER_M') || 50);
+      setPxPerM(initScale); // อัปเดต lbl-scale และ redraw ให้ตรงกับค่าล่าสุด
+      const _inpScaleAdmin = document.getElementById('inp-scale');
+      if (_inpScaleAdmin) _inpScaleAdmin.addEventListener('change', () => setPxPerM(_inpScaleAdmin.value));
+      }
+      
+
     (async () => {
       await ensureBaseData();
       adminNodes = makeFloorMap({}); for (const f of FLOORS) adminNodes[f] = deepClone(baseNodes[f]);
       adminEdges = makeFloorMap([]); interEdges = [];
       await loadFloor(currentFloor, true);
+
+      on("btnHelp","click", ()=>toggleHelp(true));
 
       on("floor-select", "change", (e) => { endCorridor(); loadFloor(+e.target.value, true); });
       on("tool-select", "click", () => setTool("select"));
@@ -498,13 +640,13 @@ function navigate(page) {
       on("tool-corridor", "click", () => setTool("corridor"));
       on("tool-connect", "click", () => setTool("connect"));
       on("tool-delete", "click", () => setTool("delete"));
-      on("tool-clear", "click", () => { adminEdges[currentFloor] = []; redrawAll(); });
-      on("tool-apply", "click", () => { for (const f of FLOORS) baseNodes[f] = deepClone(adminNodes[f]); alert("Applied"); });
-      on("tool-reset", "click", () => { for (const f of FLOORS) { adminNodes[f] = deepClone(baseNodes[f]); adminEdges[f] = []; } interEdges = []; selected = null; endCorridor(); redrawAll(); renderInspector(); updateInterCount(); });
-      on("tool-export", "click", exportIndoorGML);
+      on("tool-clear", "click", () => recordChange("Clear edges of floor", () => { adminEdges[currentFloor] = []; redrawAll(); }));
+      on("tool-apply", "click", () => { for (const f of FLOORS) baseNodes[f] = deepClone(adminNodes[f]); rebuildSearchIndex(); ccToast("Applied"); });
+      on("tool-reset", "click", () => recordChange("Reset edits", () => { for (const f of FLOORS) { adminNodes[f] = deepClone(baseNodes[f]); adminEdges[f] = []; } interEdges = []; selected = null; endCorridor(); redrawAll(); renderInspector(); updateInterCount(); }));
+      on("tool-export", "click", () => { exportIndoorGML(); ccToast("Exported GML"); });
       on("btn-save", "click", onInspectorSave);
       on("btn-del", "click", onInspectorDelete);
-      on("btn-clear-inter", "click", () => { interEdges = []; updateInterCount(); redrawAll(); });
+      on("btn-clear-inter", "click", () => recordChange("Clear inter-layer", () => { interEdges = []; updateInterCount(); redrawAll(); }));
       on("backMap", "click", () => navigate("map"));
 
       setTool("select");
@@ -516,12 +658,89 @@ function navigate(page) {
   navigate("map");
 }
 
+// ---------- Help overlay & Shortcuts ----------
+function mountHelpAndOverlays(){
+  const help = document.createElement('div');
+  help.id = 'cc-help';
+  help.className = 'cc-help';
+  help.style.cssText = 'position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.35);z-index:9998';
+  help.innerHTML = `
+    <div class="card" style="background:#fff;border-radius:1rem;box-shadow:0 20px 60px rgba(0,0,0,.3);padding:20px;max-width:540px;width:92%">
+      <h3 class="font-semibold text-lg mb-2">Keyboard Shortcuts</h3>
+      <ul class="grid grid-cols-2 gap-y-1 text-sm">
+        <li><b>F</b> — โฟกัสค้นหา</li><li><b>Esc</b> — Clear overlays</li>
+        <li><b>Space + Drag</b> — Pan</li><li><b>Wheel</b> — Zoom</li>
+        <li><b>M</b> — Measure</li><li><b>?</b> — Help</li>
+        <li><b>Ctrl/⌘+Z</b> — Undo</li><li><b>Ctrl/⌘+Y</b>/<b>Shift+Z</b> — Redo</li>
+      </ul>
+      <div class="mt-3 text-right"><button id="cc-help-close" class="px-3 py-1 border rounded">Close</button></div>
+    </div>`;
+  document.body.appendChild(help);
+  on('cc-help-close','click',()=>toggleHelp(false));
+
+  // global keys
+  window.addEventListener('keydown',(e)=>{
+    if ((e.key==='?' || (e.shiftKey && e.key==='/'))){ e.preventDefault(); toggleHelp(); }
+    else if (e.key.toLowerCase()==='f'){ const el=byId('room-search'); if(el){ e.preventDefault(); el.focus(); el.select(); } }
+    else if (e.key==='Escape'){ clearOverlays(); }
+    else if (e.key.toLowerCase()==='m'){ e.preventDefault(); toggleMeasure(); }
+    // Undo/Redo
+    else if ((e.metaKey||e.ctrlKey) && e.key.toLowerCase()==='z' && !e.shiftKey){ e.preventDefault(); ccHistory.undo(); }
+    else if ((e.metaKey||e.ctrlKey) && (e.key.toLowerCase()==='y' || (e.key.toLowerCase()==='z' && e.shiftKey))){ e.preventDefault(); ccHistory.redo(); }
+  });
+}
+function toggleHelp(force){ const h=byId('cc-help'); if(!h) return; const show = (force===undefined)? h.style.display==='none' : force; h.style.display = show? 'flex':'none'; }
+
+// ---------- Minimap ----------
+function buildMiniMap(){
+  const mm = byId('cc-mm'); const s = svgEl();
+  if (!mm || !s){ if(mm) mm.classList.add('cc-mm-hide'); return; }
+  const vb = (s.getAttribute('viewBox')||'0 0 800 600').split(/\s+/).map(Number);
+  const [vx,vy,vw,vh]=vb;
+  const fullW = s.viewBox.baseVal?.width || vw, fullH = s.viewBox.baseVal?.height || vh;
+  const w = mm.clientWidth || 220, h = mm.clientHeight || 160;
+  const scale = Math.min(w/fullW, h/fullH);
+  const padX = (w - fullW*scale)/2, padY = (h - fullH*scale)/2;
+
+  const svgNS = 'http://www.w3.org/2000/svg';
+  const ms = document.createElementNS(svgNS,'svg');
+  ms.setAttribute('width','100%'); ms.setAttribute('height','100%');
+  ms.setAttribute('viewBox',`0 0 ${w} ${h}`);
+  const bg = document.createElementNS(svgNS,'rect');
+  bg.setAttribute('x',padX); bg.setAttribute('y',padY);
+  bg.setAttribute('width',fullW*scale); bg.setAttribute('height',fullH*scale);
+  bg.setAttribute('fill','#fafafa'); bg.setAttribute('stroke','#e5e7eb');
+  ms.appendChild(bg);
+
+  const vRect = document.createElementNS(svgNS,'rect');
+  vRect.setAttribute('x', padX + vx*scale); vRect.setAttribute('y', padY + vy*scale);
+  vRect.setAttribute('width', vw*scale); vRect.setAttribute('height', vh*scale);
+  vRect.setAttribute('fill','none'); vRect.setAttribute('stroke','#111'); vRect.setAttribute('stroke-width','1.4');
+  ms.appendChild(vRect);
+
+  ms.addEventListener('click',(e)=>{
+    const r=ms.getBoundingClientRect();
+    const mx=e.clientX-r.left-padX, my=e.clientY-r.top-padY;
+    const cx=Math.max(0,Math.min(fullW,mx/scale)), cy=Math.max(0,Math.min(fullH,my/scale));
+    const sview = s._view; if(!sview) return;
+    const asp = sview.h/sview.w;
+    const targetW = sview.w; const targetH = targetW*asp;
+    const nx = Math.max(0, Math.min(fullW-targetW, cx - targetW/2));
+    const ny = Math.max(0, Math.min(fullH-targetH, cy - targetH/2));
+    sview.x=nx; sview.y=ny; setVB(s);
+    ccToast('Jumped');
+    buildMiniMap();
+  });
+
+  mm.innerHTML=''; mm.appendChild(ms); mm.classList.remove('cc-mm-hide');
+}
+
 // ---------- Multi-floor preview ----------
 async function renderMultiFloorRoute(segments, meta) {
   const host = byId("multi-route"); if (!host) return;
   host.innerHTML = "";
   const floorsInRoute = [];
-  for (const seg of segments || []) if (seg.nodes && seg.nodes.length >= 2 && !floorsInRoute.includes(seg.floor)) floorsInRoute.push(seg.floor);
+  for (const seg of (segments || [])) if (seg.nodes && seg.nodes.length >= 2 && !floorsInRoute.includes(seg.floor)) floorsInRoute.push(seg.floor);
   if (!floorsInRoute.length) { host.innerHTML = `<div class="text-sm text-gray-600">ไม่มีช่วงเส้นทางในชั้นใดเลย</div>`; return; }
   for (const f of floorsInRoute) {
     const card = document.createElement("div");
@@ -535,14 +754,16 @@ async function renderMultiFloorRoute(segments, meta) {
     const svgBox = card.querySelector(`#mr-svg-${f}`);
     await loadFloorSvgInto(svgBox, f);
     const svg = svgBox.querySelector("svg"); if (!svg) continue;
+
     svg.querySelectorAll(".path-line,.highlight-node").forEach(el => el.remove());
+
     const seg = (segments || []).find(s => s.floor === f);
     if (!seg || !seg.nodes || seg.nodes.length < 2) continue;
     const pts = seg.nodes.map(k => { const n = meta.byKey[k]; return n ? `${n.x},${n.y}` : null; }).filter(Boolean);
     const pl = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
     pl.setAttribute("points", pts.join(" ")); pl.setAttribute("fill", "none"); pl.setAttribute("stroke", "red"); pl.setAttribute("stroke-width", "3");
     pl.classList.add("path-line"); svg.appendChild(pl);
-    const first = meta.byKey[seg.nodes[0]], last = meta.byKey[seg.nodes[seg.nodes.length - 1]];
+    const first = meta.byKey[seg.nodes[0]], last = meta.byKey[seg.nodes[seg.length - 1]];
     if (first) addDot(svg, first.x, first.y, "green");
     if (last) addDot(svg, last.x, last.y, "red");
   }
@@ -562,6 +783,80 @@ function addDot(svg, x, y, color) {
   c.setAttribute("cx", x); c.setAttribute("cy", y); c.setAttribute("r", 7);
   c.setAttribute("fill", color); c.setAttribute("stroke", "black"); c.setAttribute("stroke-width", 2);
   c.classList.add("highlight-node"); svg.appendChild(c);
+}
+
+// ---------- SVG / Viewport ----------
+function initViewport(svg) {
+  if (!svg) return;
+  let vb = svg.getAttribute("viewBox");
+  if (!vb) {
+    const w = Number(svg.getAttribute("width")) || svg.clientWidth || 800;
+    const h = Number(svg.getAttribute("height")) || svg.clientHeight || 600;
+    vb = `0 0 ${w} ${h}`;
+    svg.setAttribute("viewBox", vb);
+  }
+  const [x, y, w, h] = svg.getAttribute("viewBox").split(/\s+/).map(Number);
+  svg._view = {
+    x, y, w, h,
+    minW: Math.min(w, h) * 0.02,
+    maxW: Math.max(w, h) * 8,
+    isPanning: false,
+    lastClientX: 0,
+    lastClientY: 0,
+    isSpaceHeld: false,
+  };
+}
+function setVB(svg) {
+  const s = svg?._view; if (!svg || !s) return;
+  svg.setAttribute("viewBox", `${s.x} ${s.y} ${s.w} ${s.h}`);
+  // sync minimap on any view change
+  buildMiniMap();
+}
+function zoomAt(svg, factor, cx, cy) {
+  const s = svg?._view; if (!s) return;
+  const nf = Math.max(s.minW / s.w, Math.min(factor, s.maxW / s.w));
+  const nx = cx - (cx - s.x) * nf;
+  const ny = cy - (cy - s.y) * nf;
+  s.x = nx; s.y = ny; s.w *= nf; s.h *= nf;
+  setVB(svg);
+}
+function startPan(svg, e) { const s = svg?._view; if (!s) return; s.isPanning = true; s.lastClientX = e.clientX; s.lastClientY = e.clientY; }
+function panTo(svg, e) {
+  const s = svg?._view; if (!s || !s.isPanning) return;
+  const kx = s.w / (svg.clientWidth || 1);
+  const ky = s.h / (svg.clientHeight || 1);
+  const dx = (e.clientX - s.lastClientX) * kx;
+  const dy = (e.clientY - s.lastClientY) * ky;
+  s.x -= dx; s.y -= dy;
+  s.lastClientX = e.clientX; s.lastClientY = e.clientY;
+  setVB(svg);
+}
+function endPan(svg) { const s = svg?._view; if (!s) return; s.isPanning = false; }
+function setupViewportControls(svg) {
+  initViewport(svg);
+  const onWheel = (e) => { e.preventDefault(); const { x, y } = svgPoint(e); const factor = Math.pow(1.0018, e.deltaY); zoomAt(svg, factor, x, y); };
+  const wantsPan = (e) => e.button === 1 || (e.button === 0 && svg._view.isSpaceHeld);
+  const onPointerDown = (e) => { if (!wantsPan(e)) return; startPan(svg, e); };
+  const onPointerMove = (e) => { if (svg._view.isPanning) panTo(svg, e); };
+  const onPointerUp = () => endPan(svg);
+  const onKeyDown = (e) => { if (e.code === "Space") svg._view.isSpaceHeld = true; };
+  const onKeyUp = (e) => { if (e.code === "Space") svg._view.isSpaceHeld = false; };
+
+  svg.addEventListener("wheel", onWheel, { passive: false });
+  svg.addEventListener("mousedown", onPointerDown);
+  window.addEventListener("mousemove", onPointerMove);
+  window.addEventListener("mouseup", onPointerUp);
+  window.addEventListener("keydown", onKeyDown);
+  window.addEventListener("keyup", onKeyUp);
+
+  svg._disposeViewport = () => {
+    svg.removeEventListener("wheel", onWheel);
+    svg.removeEventListener("mousedown", onPointerDown);
+    window.removeEventListener("mousemove", onPointerMove);
+    window.removeEventListener("mouseup", onPointerUp);
+    window.removeEventListener("keydown", onKeyDown);
+    window.removeEventListener("keyup", onKeyUp);
+  };
 }
 
 // ---------- SVG / Draw ----------
@@ -592,27 +887,39 @@ async function loadFloor(floorNumber, adminMode) {
          <rect x="10" y="10" width="380" height="340" fill="#fafafa" stroke="#ccc"/>
          <text x="20" y="30" font-size="14">Floor ${currentFloor}</text>
        </svg>`;
-  enhanceSVG(adminMode); redrawAll();
+  enhanceSVG(adminMode); redrawAll(); buildMiniMap();
 }
 
 function enhanceSVG(adminMode) {
   const svg = svgEl(); if (!svg) return;
   svg.style.userSelect = "none";
   svg.style.cursor = adminMode && (tool.startsWith("add-") || tool === "corridor") ? "crosshair" : "default";
+
   const fresh = svg.cloneNode(true);
   svg.parentNode.replaceChild(fresh, svg);
 
   const s = svgEl(); if (!s) return;
+
+  setupViewportControls(s);
+
   s.addEventListener("mousedown", onSvgMouseDown);
   s.addEventListener("dblclick", onSvgDblClick);
   s.addEventListener("contextmenu", onSvgContextMenu);
   window.addEventListener("mousemove", onSvgMouseMove);
   window.addEventListener("mouseup", onSvgMouseUp);
+
+  // Measure: click to pick points when on
+  s.addEventListener("click",(e)=>{
+    if(!measureOn) return;
+    const pt = svgPoint(e); const npt = {x:pt.x,y:pt.y};
+    if(!measureStart){ measureStart = npt; updateMeasure(0); }
+    else { const d = Math.hypot(npt.x - measureStart.x, npt.y - measureStart.y) / PX_PER_M; updateMeasure(d); measureStart = null; }
+  });
 }
 
 function removeSvgOverlays() {
   const svg = svgEl(); if (!svg) return;
-  svg.querySelectorAll(".editable-node,.edge-line,.node-label,.selected-ring,.path-line,.highlight-node,.inter-icon").forEach(el => el.remove());
+  svg.querySelectorAll(".editable-node,.edge-line,.node-label,.selected-ring,.path-line,.highlight-node,.inter-icon,.blink-ring").forEach(el => el.remove());
 }
 
 function redrawAll() {
@@ -658,6 +965,7 @@ function redrawAll() {
       ring.setAttribute("stroke", "#10b981"); ring.setAttribute("stroke-width", "2"); ring.classList.add("selected-ring"); svg.appendChild(ring);
     }
   }
+  buildMiniMap();
 }
 
 function renderRouteForCurrentFloor(segments, meta) {
@@ -672,7 +980,7 @@ function renderRouteForCurrentFloor(segments, meta) {
   }
 }
 
-function clearOverlays() { const svg = svgEl(); if (!svg) return; svg.querySelectorAll(".path-line,.highlight-node").forEach(el => el.remove()); }
+function clearOverlays() { const svg = svgEl(); if (!svg) return; svg.querySelectorAll(".path-line,.highlight-node,.blink-ring").forEach(el => el.remove()); }
 
 // ---------- Dropdown ----------
 function syncNodeDropdown(floorSelId, nodeSelId) {
@@ -705,7 +1013,13 @@ function setTool(name) {
   });
   const svg = svgEl(); if (svg) svg.style.cursor = isAdmin() && (name.startsWith?.("add-") || name === "corridor") ? "crosshair" : "default";
 }
-function svgPoint(evt) { const svg = svgEl(); if (!svg) return { x: 0, y: 0 }; const pt = svg.createSVGPoint(); pt.x = evt.clientX; pt.y = evt.clientY; const loc = pt.matrixTransform(svg.getScreenCTM().inverse()); return { x: Math.round(loc.x), y: Math.round(loc.y) }; }
+function svgPoint(evt) {
+  const svg = svgEl(); if (!svg) return { x: 0, y: 0 };
+  const pt = svg.createSVGPoint();
+  pt.x = evt.clientX; pt.y = evt.clientY;
+  const loc = pt.matrixTransform(svg.getScreenCTM().inverse());
+  return { x: Math.round(loc.x), y: Math.round(loc.y) };
+}
 
 function nearestNodeAt(x, y, tol = 12) {
   const nodes = adminNodes[currentFloor] || {};
@@ -724,32 +1038,57 @@ function onSvgMouseDown(evt) {
   const { x, y } = svgPoint(evt);
 
   if ((tool === "add-room" || tool === "add-door" || tool === "add-junction") && !hit) {
-    const id = nextNodeId();
-    const type = tool === "add-door" ? "door" : tool === "add-junction" ? "junction" : "room";
-    adminNodes[currentFloor][id] = { x, y, name: type === "room" ? `Room ${id}` : `${type} ${id}`, type, floor: currentFloor };
-    selected = { floor: currentFloor, id }; redrawAll(); renderInspector();
+    recordChange(`Add ${tool.replace('add-','')}`, () => {
+      const id = nextNodeId();
+      const type = tool === "add-door" ? "door" : tool === "add-junction" ? "junction" : "room";
+      adminNodes[currentFloor][id] = { x, y, name: type === "room" ? `Room ${id}` : `${type} ${id}`, type, floor: currentFloor };
+      selected = { floor: currentFloor, id }; 
+    });
+    redrawAll(); renderInspector();
     return;
   }
 
   if (tool === "corridor" && !hit) {
     const snap = nearestNodeAt(x, y, SNAP_TOL);
     let id;
-    if (snap) { id = snap.id; }
-    else {
-      id = nextNodeId();
-      adminNodes[currentFloor][id] = { x, y, name: `corr ${id}`, type: "corridor", floor: currentFloor };
-    }
-    appendCorridorPoint({ floor: currentFloor, id });
+    recordChange("Corridor point", () => {
+      if (snap) { id = snap.id; }
+      else {
+        id = nextNodeId();
+        adminNodes[currentFloor][id] = { x, y, name: `corr ${id}`, type: "corridor", floor: currentFloor };
+      }
+      appendCorridorPoint({ floor: currentFloor, id });
+    });
     return;
   }
 }
 function onNodeMouseDown(evt) {
   if (!isAdmin()) return; evt.preventDefault();
   const id = evt.target.getAttribute("data-id");
-  if (tool === "select") { const { x, y } = svgPoint(evt); const n = adminNodes[currentFloor][id]; dragging = { floor: currentFloor, id, offsetX: x - n.x, offsetY: y - n.y }; }
+  if (tool === "select") {
+    const { x, y } = svgPoint(evt);
+    const n = adminNodes[currentFloor][id];
+    dragging = { floor: currentFloor, id, offsetX: x - n.x, offsetY: y - n.y, startX: n.x, startY: n.y };
+  }
 }
-function onSvgMouseMove(evt) { if (!isAdmin() || !dragging) return; const { x, y } = svgPoint(evt); const n = adminNodes[dragging.floor][dragging.id]; n.x = x - dragging.offsetX; n.y = y - dragging.offsetY; redrawAll(); }
-function onSvgMouseUp() { dragging = null; }
+function onSvgMouseMove(evt) {
+  if (!isAdmin() || !dragging) return;
+  const { x, y } = svgPoint(evt);
+  const n = adminNodes[dragging.floor][dragging.id];
+  n.x = x - dragging.offsetX; n.y = y - dragging.offsetY;
+  redrawAll();
+}
+function onSvgMouseUp() { 
+  if (!isAdmin() || !dragging) { dragging = null; return; }
+  const n = adminNodes[dragging.floor][dragging.id];
+  const moved = (n.x !== dragging.startX || n.y !== dragging.startY);
+  if (moved){
+    const id = dragging.id, f = dragging.floor, toX = n.x, toY = n.y, fromX = dragging.startX, fromY = dragging.startY;
+    // normalize via snapshot
+    recordChange(`Move ${id}`, ()=>{ adminNodes[f][id].x = toX; adminNodes[f][id].y = toY; });
+  }
+  dragging = null; 
+}
 
 function onNodeClick(evt) {
   if (!isAdmin()) return;
@@ -759,34 +1098,40 @@ function onNodeClick(evt) {
   if (tool === "connect") {
     connectBuffer.push({ floor: currentFloor, id });
     if (connectBuffer.length === 2) {
-      const [a, b] = connectBuffer;
-      if (a.floor === b.floor) {
-        if (a.id !== b.id) {
-          const na = adminNodes[a.floor][a.id], nb = adminNodes[b.floor][b.id];
-          adminEdges[a.floor].push({ from: a.id, to: b.id, weight: distM(na, nb) });
+      recordChange("Connect", () => {
+        const [a, b] = connectBuffer;
+        if (a.floor === b.floor) {
+          if (a.id !== b.id) {
+            const na = adminNodes[a.floor][a.id], nb = adminNodes[b.floor][b.id];
+            adminEdges[a.floor].push({ from: a.id, to: b.id, weight: distM(na, nb) });
+          }
+        } else {
+          interEdges.push({ from: a, to: b, type: "stair_mid" });
         }
-      } else {
-        interEdges.push({ from: a, to: b, type: "stair_mid" });
-      }
+      });
       connectBuffer = []; redrawAll(); updateInterCount();
     }
     return;
   }
 
-  if (tool === "corridor") { appendCorridorPoint({ floor: currentFloor, id }); return; }
+  if (tool === "corridor") { 
+    recordChange("Corridor point", ()=>appendCorridorPoint({ floor: currentFloor, id })); 
+    return; 
+  }
 
   if (tool === "delete") {
-    delete adminNodes[currentFloor][id];
-    adminEdges[currentFloor] = adminEdges[currentFloor].filter(e => e.from !== id && e.to !== id);
-    interEdges = interEdges.filter(e => !((e.from.floor === currentFloor && e.from.id === id) || (e.to.floor === currentFloor && e.to.id === id)));
-    if (selected && selected.floor === currentFloor && selected.id === id) selected = null;
+    recordChange(`Delete ${id}`, () => {
+      delete adminNodes[currentFloor][id];
+      adminEdges[currentFloor] = adminEdges[currentFloor].filter(e => e.from !== id && e.to !== id);
+      interEdges = interEdges.filter(e => !((e.from.floor === currentFloor && e.from.id === id) || (e.to.floor === currentFloor && e.to.id === id)));
+      if (selected && selected.floor === currentFloor && selected.id === id) selected = null;
+    });
     renderInspector(); redrawAll(); updateInterCount();
   }
 }
 
 /**
- * Corridor: auto place nodes every STEP_PX along the segment.
- * Why: make corridor graph uniform without manual clicks every 50px.
+ * Corridor auto nodes
  */
 function appendCorridorPoint(pt) {
   if (!corridorActive) {
@@ -801,7 +1146,6 @@ function appendCorridorPoint(pt) {
 
   const last = corridorBuffer[corridorBuffer.length - 1];
   if (!(last && last.floor === pt.floor && last.id !== pt.id)) {
-    // same node or floor mismatch → just select & return
     corridorBuffer.push(pt);
     selected = { ...pt };
     renderInspector(); redrawAll();
@@ -822,10 +1166,8 @@ function appendCorridorPoint(pt) {
   const steps = Math.floor(d / STEP_PX);
 
   if (steps <= 1) {
-    // short segment: connect directly
     adminEdges[floor].push({ from: prevId, to: pt.id, weight: distM(nodes[prevId], b) });
   } else {
-    // create intermediate points every STEP_PX
     for (let i = 1; i < steps; i++) {
       const t = (i * STEP_PX) / d;
       const x = Math.round(a.x + dx * t);
@@ -849,7 +1191,6 @@ function appendCorridorPoint(pt) {
         prevId = nid;
       }
     }
-    // connect last intermediate to target
     const pa = adminNodes[floor][prevId];
     adminEdges[floor].push({ from: prevId, to: pt.id, weight: distM(pa, b) });
   }
@@ -876,27 +1217,33 @@ function onInspectorSave() {
   const idNew = escId(byId("inp-id").value.trim());
   const nameNew = byId("inp-name").value.trim();
   const typeNew = byId("inp-type").value;
-  if (!idNew) return alert("Invalid ID");
-  const nodes = adminNodes[selected.floor]; if (idNew !== selected.id && nodes[idNew]) return alert("ID ซ้ำ");
-  const n = nodes[selected.id]; n.name = nameNew || null; n.type = typeNew;
-  if (idNew !== selected.id) {
-    nodes[idNew] = { ...n }; delete nodes[selected.id];
-    adminEdges[selected.floor] = adminEdges[selected.floor].map(e => ({ from: e.from === selected.id ? idNew : e.from, to: e.to === selected.id ? idNew : e.to, weight: e.weight }));
-    interEdges = interEdges.map(e => ({
-      from: (e.from.floor === selected.floor && e.from.id === selected.id) ? { ...e.from, id: idNew } : e.from,
-      to: (e.to.floor === selected.floor && e.to.id === selected.id) ? { ...e.to, id: idNew } : e.to,
-      type: e.type
-    }));
-    selected.id = idNew;
-  }
+  if (!idNew) { ccToast("Invalid ID"); return; }
+  const nodes = adminNodes[selected.floor]; if (idNew !== selected.id && nodes[idNew]) { ccToast("ID ซ้ำ"); return; }
+
+  recordChange(`Edit ${selected.id}`, () => {
+    const n = nodes[selected.id]; n.name = nameNew || null; n.type = typeNew;
+    if (idNew !== selected.id) {
+      nodes[idNew] = { ...n }; delete nodes[selected.id];
+      adminEdges[selected.floor] = adminEdges[selected.floor].map(e => ({ from: e.from === selected.id ? idNew : e.from, to: e.to === selected.id ? idNew : e.to, weight: e.weight }));
+      interEdges = interEdges.map(e => ({
+        from: (e.from.floor === selected.floor && e.from.id === selected.id) ? { ...e.from, id: idNew } : e.from,
+        to: (e.to.floor === selected.floor && e.to.id === selected.id) ? { ...e.to, id: idNew } : e.to,
+        type: e.type
+      }));
+      selected.id = idNew;
+    }
+  });
   redrawAll(); renderInspector();
 }
 function onInspectorDelete() {
   if (!selected) return;
-  delete adminNodes[selected.floor][selected.id];
-  adminEdges[selected.floor] = adminEdges[selected.floor].filter(e => e.from !== selected.id && e.to !== selected.id);
-  interEdges = interEdges.filter(e => !((e.from.floor === selected.floor && e.from.id === selected.id) || (e.to.floor === selected.floor && e.to.id === selected.id)));
-  selected = null; redrawAll(); renderInspector(); updateInterCount();
+  recordChange(`Delete ${selected.id}`, () => {
+    delete adminNodes[selected.floor][selected.id];
+    adminEdges[selected.floor] = adminEdges[selected.floor].filter(e => e.from !== selected.id && e.to !== selected.id);
+    interEdges = interEdges.filter(e => !((e.from.floor === selected.floor && e.from.id === selected.id) || (e.to.floor === selected.floor && e.to.id === selected.id)));
+    selected = null; updateInterCount();
+  });
+  redrawAll(); renderInspector();
 }
 function updateInterCount() { const el = byId("inter-count"); if (el) el.textContent = String(interEdges.length); }
 function nextNodeId() { let i = 1; const used = new Set(FLOORS.flatMap(f => Object.keys(adminNodes[f]))); while (true) { const id = `N${String(i).padStart(3, "0")}`; if (!used.has(id)) return id; i++; } }
@@ -957,7 +1304,163 @@ function spaceLayerXml(f) {
 }
 
 // ---------- Steps UI ----------
-function showSteps(list) { const el = byId("route-steps"); if (!el) { alert(list.join("\n")); return; } el.innerHTML = list.map(s => `<li>${s}</li>`).join(""); }
+function showSteps(list) { const el = byId("route-steps"); if (!el) { ccToast(list.join(" • ")); return; } el.innerHTML = list.map(s => `<li>${s}</li>`).join(""); }
+
+// ---------- Search ----------
+function rebuildSearchIndex() {
+  const idx = [];
+  for (const f of FLOORS) {
+    for (const [id, n] of Object.entries(baseNodes[f] || {})) {
+      if (!n) continue;
+      const name = String(n.name || "").trim();
+      const type = String(n.type || "").trim();
+      const norm = (name + " " + id + " " + type).toLowerCase();
+      idx.push({ floor: f, id, name, type, x: +n.x || 0, y: +n.y || 0, norm });
+    }
+  }
+  SEARCH_IDX = idx;
+}
+
+function querySearch(q, limit = 12) {
+  const s = (q || "").toLowerCase().trim();
+  if (!s) return [];
+  const curF = currentFloor;
+  const scored = [];
+  for (const it of SEARCH_IDX) {
+    let score = 0;
+    if (it.id.toLowerCase() === s) score += 100;
+    if (it.name.toLowerCase() === s) score += 90;
+    if (it.id.toLowerCase().startsWith(s)) score += 40;
+    if (it.name.toLowerCase().startsWith(s)) score += 35;
+    if (it.norm.includes(s)) score += 20;
+    if (it.type.toLowerCase() === s) score += 10;
+    if (it.floor === curF) score += 5;
+    if (score > 0) scored.push({ ...it, _score: score });
+  }
+  scored.sort((a,b) => b._score - a._score || a.floor - b.floor || a.id.localeCompare(b.id));
+  return scored.slice(0, limit);
+}
+
+function setupSearchUI() {
+  const inp = byId("room-search");
+  const box = byId("room-suggest");
+  if (!inp || !box) return;
+
+  let sel = -1;
+  let last = "";
+  const deb = debounce(() => {
+    const q = inp.value;
+    if (q === last) return;
+    last = q;
+    renderSuggest(querySearch(q));
+  }, 120);
+
+  inp.addEventListener("input", deb);
+  inp.addEventListener("keydown", (e) => {
+    const items = Array.from(box.querySelectorAll(".suggest-item"));
+    if (e.key === "ArrowDown") { e.preventDefault(); sel = Math.min(items.length - 1, sel + 1); mark(); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); sel = Math.max(-1, sel - 1); mark(); }
+    else if (e.key === "Enter") {
+      e.preventDefault();
+      if (sel >= 0 && items[sel]) items[sel].click();
+      else {
+        const r = querySearch(inp.value, 1)[0];
+        if (r) pick(r);
+      }
+    } else if (e.key === "Escape") { hide(); }
+  });
+
+  document.addEventListener("click", (e) => { if (!e.target.closest(".search-wrap")) hide(); });
+
+  function renderSuggest(list) {
+    if (!list.length) { hide(); return; }
+    box.innerHTML = list.map(row => `
+      <div class="suggest-item" data-floor="${row.floor}" data-id="${row.id}">
+        <span class="badge">F${row.floor}</span>
+        <span>${escapeHtml(row.name || row.id)}</span>
+        <span class="text-gray-500 text-xs">(${row.type || "node"} • ${row.id})</span>
+      </div>`).join("");
+    box.classList.add("show");
+    sel = -1;
+    Array.from(box.querySelectorAll(".suggest-item")).forEach(el => {
+      el.addEventListener("click", () => {
+        pick({ floor: +el.getAttribute("data-floor"), id: el.getAttribute("data-id") });
+      });
+    });
+  }
+  function hide() { box.classList.remove("show"); box.innerHTML = ""; sel = -1; }
+  function mark() {
+    const items = Array.from(box.querySelectorAll(".suggest-item"));
+    items.forEach((it,i) => it.classList.toggle("active", i === sel));
+    if (sel >= 0 && items[sel]) items[sel].scrollIntoView({ block: "nearest" });
+  }
+  async function pick({ floor, id }) {
+    hide();
+    inp.blur();
+    await focusNode(floor, id);
+  }
+}
+
+async function focusNode(floor, id) {
+  if (currentFloor !== floor) {
+    const vf = byId("view-floor");
+    if (vf) vf.value = String(floor);
+    await loadFloor(floor, false);
+  }
+  const svg = svgEl(); if (!svg) return;
+  const n = (baseNodes[floor] || {})[id];
+  if (!n) return;
+  centerZoomTo(svg, n.x, n.y, 300);
+  blinkAt(svg, n.x, n.y);
+}
+
+function centerZoomTo(svg, x, y, targetW = 300) {
+  const s = svg._view; if (!s) return;
+  const aspect = s.h / s.w;
+  s.w = Math.max(s.minW, Math.min(targetW, s.maxW));
+  s.h = s.w * aspect;
+  s.x = x - s.w / 2;
+  s.y = y - s.h / 2;
+  setVB(svg);
+}
+
+function ensureBlinkStyles() {
+  if (document.getElementById("blink-style")) return;
+  const css = `
+  @keyframes blinkPulse { 0%{r:10; opacity:0.9} 50%{r:22; opacity:0.2} 100%{r:10; opacity:0.9} }
+  .blink-ring { fill:none; stroke:#ef4444; stroke-width:3; animation: blinkPulse 800ms ease-in-out 4; }
+  .cc-mm-hide{ display:none }
+  `;
+  const style = document.createElement("style");
+  style.id = "blink-style";
+  style.textContent = css;
+  document.head.appendChild(style);
+}
+
+function blinkAt(svg, x, y) {
+  svg.querySelectorAll(".blink-ring").forEach(e => e.remove());
+  const ring = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+  ring.setAttribute("cx", x); ring.setAttribute("cy", y); ring.setAttribute("r", 10);
+  ring.classList.add("blink-ring");
+  svg.appendChild(ring);
+  setTimeout(() => ring.remove(), 3200);
+}
+
+// ---------- Measure helpers ----------
+function toggleMeasure(){
+  measureOn = !measureOn;
+  measureStart = null;
+  const el = byId('cc-measure'); if (!el) return;
+  el.classList.toggle('cc-mm-hide', !measureOn);
+  if(!measureOn) el.textContent = '0 m';
+  ccToast(measureOn? 'Measure ON':'Measure OFF');
+}
+function updateMeasure(dMeters){
+  const el = byId('cc-measure'); if (!el) return;
+  el.textContent = `${dMeters.toFixed(1)} m`;
+}
+
+
 
 // ---------- Boot ----------
 window.onload = () => navigate("map");

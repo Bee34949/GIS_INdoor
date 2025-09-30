@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <core:IndoorFeatures xmlns:core="http://www.opengis.net/indoorgml/1.0/core" xmlns:gml="http://www.opengis.net/gml/3.2">
   <core:multiLayeredGraph>
     <core:MultiLayeredGraph gml:id="mlg_1">
@@ -1696,7 +1696,7 @@
         <gml:description>{"type":"junction","floor":1}</gml:description>
         <core:dualGraph><gml:Point gml:id="pt_1_N275"><gml:pos>1598 812</gml:pos></gml:Point></core:dualGraph>
       </core:State>
-    </core:stateMember></core:Nodes></core:nodes><core:edges><core:Edges></core:Edges></core:SpaceLayer></core:spaceLayerMember><core:spaceLayerMember><core:SpaceLayer gml:id="layer_2"><core:nodes><core:Nodes>
+    </core:stateMember></core:Nodes></core:nodes><core:edges><core:Edges/></core:edges></core:SpaceLayer><core:spaceLayerMember><core:SpaceLayer gml:id="layer_2"><core:nodes><core:Nodes>
     <core:stateMember>
       <core:State gml:id="state_2_0">
         <gml:name>ห้อง2205</gml:name>
@@ -4034,7 +4034,7 @@
         <gml:description>{"type":"junction","floor":2}</gml:description>
         <core:dualGraph><gml:Point gml:id="pt_2_walk N395"><gml:pos>1028 1528</gml:pos></gml:Point></core:dualGraph>
       </core:State>
-    </core:stateMember></core:Nodes></core:nodes><core:edges><core:Edges></core:Edges></core:SpaceLayer></core:spaceLayerMember><core:spaceLayerMember><core:SpaceLayer gml:id="layer_3"><core:nodes><core:Nodes>
+    </core:stateMember></core:Nodes></core:nodes><core:edges><core:Edges/></core:edges></core:SpaceLayer><core:spaceLayerMember><core:SpaceLayer gml:id="layer_3"><core:nodes><core:Nodes>
     <core:stateMember>
       <core:State gml:id="state_3_N001">
         <gml:name>ห้องบรรยายเคมี 1 2309</gml:name>
@@ -6134,7 +6134,7 @@
         <gml:description>{"type":"corridor","floor":3}</gml:description>
         <core:dualGraph><gml:Point gml:id="pt_3_N362"><gml:pos>2329 1187</gml:pos></gml:Point></core:dualGraph>
       </core:State>
-    </core:stateMember></core:Nodes></core:nodes><core:edges><core:Edges></core:Edges></core:SpaceLayer></core:spaceLayerMember><core:spaceLayerMember><core:SpaceLayer gml:id="layer_4"><core:nodes><core:Nodes>
+    </core:stateMember></core:Nodes></core:nodes><core:edges><core:Edges/></core:edges></core:SpaceLayer><core:spaceLayerMember><core:SpaceLayer gml:id="layer_4"><core:nodes><core:Nodes>
     <core:stateMember>
       <core:State gml:id="state_4_N064">
         <gml:name>ห้องปฏิบัติการทางสิ่งแวดล้อม</gml:name>
@@ -8668,7 +8668,7 @@
         <gml:description>{"type":"corridor","floor":4}</gml:description>
         <core:dualGraph><gml:Point gml:id="pt_4_N463"><gml:pos>1147 1537</gml:pos></gml:Point></core:dualGraph>
       </core:State>
-    </core:stateMember></core:Nodes></core:nodes><core:edges><core:Edges></core:Edges></core:SpaceLayer></core:spaceLayerMember><core:spaceLayerMember><core:SpaceLayer gml:id="layer_5"><core:nodes><core:Nodes>
+    </core:stateMember></core:Nodes></core:nodes><core:edges><core:Edges/></core:edges></core:SpaceLayer><core:spaceLayerMember><core:SpaceLayer gml:id="layer_5"><core:nodes><core:Nodes>
     <core:stateMember>
       <core:State gml:id="state_5_N144">
         <gml:name>ห้องบรรยาย 2507 (2)</gml:name>
@@ -8685,308 +8685,7 @@
     </core:stateMember>
     <core:stateMember>
       <core:State gml:id="state_5_N146">
-        <gml:name>ห้องMATH&amp;STAT LEARNING CENTER</gml:name>
-        <gml:description>{"type":"room","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N146"><gml:pos>2373 1171</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N147">
-        <gml:name>ห้องบรรยาย 2503</gml:name>
-        <gml:description>{"type":"room","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N147"><gml:pos>2001 1046</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N148">
-        <gml:name>ห้องบรรยาย 2504</gml:name>
-        <gml:description>{"type":"room","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N148"><gml:pos>1998 908</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N149">
-        <gml:name>ห้องบรรยาย 2506</gml:name>
-        <gml:description>{"type":"room","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N149"><gml:pos>2001 702</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N150">
-        <gml:name>ห้องน้ำหญิง</gml:name>
-        <gml:description>{"type":"room","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N150"><gml:pos>1904 1261</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N151">
-        <gml:name>ห้องน้ำชาย</gml:name>
-        <gml:description>{"type":"room","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N151"><gml:pos>1573 1271</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N152">
-        <gml:name>ห้องเรียน Lab4</gml:name>
-        <gml:description>{"type":"room","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N152"><gml:pos>1744 996</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N153">
-        <gml:name>ห้องเตรียม Lab2</gml:name>
-        <gml:description>{"type":"room","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N153"><gml:pos>1744 818</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N154">
-        <gml:name>ห้องปฏิบัติการ Lab3</gml:name>
-        <gml:description>{"type":"room","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N154"><gml:pos>1751 674</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N155">
-        <gml:name>ห้องสมุดสาขาวิชา</gml:name>
-        <gml:description>{"type":"room","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N155"><gml:pos>1607 646</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N156">
-        <gml:name>ห้องปฏิบัติการ Lab2</gml:name>
-        <gml:description>{"type":"room","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N156"><gml:pos>1469 668</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N157">
-        <gml:name>ห้องเตรียม Lab1</gml:name>
-        <gml:description>{"type":"room","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N157"><gml:pos>1472 814</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N158">
-        <gml:name>ห้องพักอาจารย์</gml:name>
-        <gml:description>{"type":"room","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N158"><gml:pos>1472 999</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N159">
-        <gml:name>ห้องสำนักงาน 2501</gml:name>
-        <gml:description>{"type":"room","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N159"><gml:pos>1188 1049</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N160">
-        <gml:name>ห้องประชุมสาขาวิชา</gml:name>
-        <gml:description>{"type":"room","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N160"><gml:pos>1054 636</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N161">
-        <gml:name>ลิฟท์ ชั้น 5</gml:name>
-        <gml:description>{"type":"elevator","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N161"><gml:pos>1435 1271</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N162">
-        <gml:name>บันไดกลาง</gml:name>
-        <gml:description>{"type":"stair","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N162"><gml:pos>2063 1261</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N163">
-        <gml:name>บันไดขวา</gml:name>
-        <gml:description>{"type":"stair","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N163"><gml:pos>2194 621</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N164">
-        <gml:name>บันไดซ้าย</gml:name>
-        <gml:description>{"type":"stair","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N164"><gml:pos>1310 686</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N165">
-        <gml:name>Door N165</gml:name>
-        <gml:description>{"type":"door","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N165"><gml:pos>2144 733</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N166">
-        <gml:name>Door N166</gml:name>
-        <gml:description>{"type":"door","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N166"><gml:pos>2235 736</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N167">
-        <gml:name>Door N167</gml:name>
-        <gml:description>{"type":"door","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N167"><gml:pos>2141 946</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N168">
-        <gml:name>Door N168</gml:name>
-        <gml:description>{"type":"door","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N168"><gml:pos>2238 943</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N169">
-        <gml:name>Door N169</gml:name>
-        <gml:description>{"type":"door","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N169"><gml:pos>2138 1005</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N170">
-        <gml:name>Door N170</gml:name>
-        <gml:description>{"type":"door","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N170"><gml:pos>2238 1130</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N171">
-        <gml:name>Door N171</gml:name>
-        <gml:description>{"type":"door","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N171"><gml:pos>2019 1218</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N172">
-        <gml:name>Door N172</gml:name>
-        <gml:description>{"type":"door","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N172"><gml:pos>1982 1221</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N173">
-        <gml:name>Door N173</gml:name>
-        <gml:description>{"type":"door","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N173"><gml:pos>1523 1224</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N174">
-        <gml:name>Door N174</gml:name>
-        <gml:description>{"type":"door","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N174"><gml:pos>1435 1224</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N175">
-        <gml:name>Door N175</gml:name>
-        <gml:description>{"type":"door","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N175"><gml:pos>1366 1005</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N176">
-        <gml:name>Door N176</gml:name>
-        <gml:description>{"type":"door","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N176"><gml:pos>1610 1121</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N177">
-        <gml:name>Door N177</gml:name>
-        <gml:description>{"type":"door","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N177"><gml:pos>1635 886</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N178">
-        <gml:name>Door N178</gml:name>
-        <gml:description>{"type":"door","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N178"><gml:pos>1585 799</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N179">
-        <gml:name>Door N179</gml:name>
-        <gml:description>{"type":"door","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N179"><gml:pos>1635 799</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N180">
-        <gml:name>Door N180</gml:name>
-        <gml:description>{"type":"door","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N180"><gml:pos>1607 861</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N181">
-        <gml:name>Door N181</gml:name>
-        <gml:description>{"type":"door","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N181"><gml:pos>1582 749</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N182">
-        <gml:name>Door N182</gml:name>
-        <gml:description>{"type":"door","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N182"><gml:pos>1635 752</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N183">
-        <gml:name>Door N183</gml:name>
-        <gml:description>{"type":"door","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N183"><gml:pos>1623 708</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N184">
-        <gml:name>Door N184</gml:name>
-        <gml:description>{"type":"door","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N184"><gml:pos>1129 739</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N185">
-        <gml:name>Door N185</gml:name>
-        <gml:description>{"type":"door","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N185"><gml:pos>1060 711</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N186">
-        <gml:name>Door N186</gml:name>
-        <gml:description>{"type":"door","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N186"><gml:pos>1266 1136</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N144">
-        <gml:name>ห้องบรรยาย 2507 (2)</gml:name>
-        <gml:description>{"type":"room","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N144"><gml:pos>2376 711</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N145">
-        <gml:name>ห้องบรรยาย 2507 (1)</gml:name>
-        <gml:description>{"type":"room","floor":5}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_5_N145"><gml:pos>2376 974</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_5_N146">
-        <gml:name>ห้องMATH&amp;STAT LEARNING CENTER</gml:name>
+        <gml:name>ห้องMATHSTAT LEARNING CENTER</gml:name>
         <gml:description>{"type":"room","floor":5}</gml:description>
         <core:dualGraph><gml:Point gml:id="pt_5_N146"><gml:pos>2373 1171</gml:pos></gml:Point></core:dualGraph>
       </core:State>
@@ -9634,967 +9333,2171 @@
         <gml:description>{"type":"corridor","floor":5}</gml:description>
         <core:dualGraph><gml:Point gml:id="pt_5_N515"><gml:pos>1163 818</gml:pos></gml:Point></core:dualGraph>
       </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N144">
+        <gml:name>ห้องบรรยาย 2507 (2)</gml:name>
+        <gml:description>{"type":"room","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N144"><gml:pos>2376 711</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N145">
+        <gml:name>ห้องบรรยาย 2507 (1)</gml:name>
+        <gml:description>{"type":"room","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N145"><gml:pos>2376 974</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N146">
+        <gml:name>ห้องMATHSTAT LEARNING CENTER</gml:name>
+        <gml:description>{"type":"room","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N146"><gml:pos>2373 1171</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N147">
+        <gml:name>ห้องบรรยาย 2503</gml:name>
+        <gml:description>{"type":"room","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N147"><gml:pos>2001 1046</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N148">
+        <gml:name>ห้องบรรยาย 2504</gml:name>
+        <gml:description>{"type":"room","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N148"><gml:pos>1998 908</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N149">
+        <gml:name>ห้องบรรยาย 2506</gml:name>
+        <gml:description>{"type":"room","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N149"><gml:pos>2001 702</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N150">
+        <gml:name>ห้องน้ำหญิง</gml:name>
+        <gml:description>{"type":"room","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N150"><gml:pos>1904 1261</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N151">
+        <gml:name>ห้องน้ำชาย</gml:name>
+        <gml:description>{"type":"room","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N151"><gml:pos>1573 1271</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N152">
+        <gml:name>ห้องเรียน Lab4</gml:name>
+        <gml:description>{"type":"room","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N152"><gml:pos>1744 996</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N153">
+        <gml:name>ห้องเตรียม Lab2</gml:name>
+        <gml:description>{"type":"room","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N153"><gml:pos>1744 818</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N154">
+        <gml:name>ห้องปฏิบัติการ Lab3</gml:name>
+        <gml:description>{"type":"room","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N154"><gml:pos>1751 674</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N155">
+        <gml:name>ห้องสมุดสาขาวิชา</gml:name>
+        <gml:description>{"type":"room","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N155"><gml:pos>1607 646</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N156">
+        <gml:name>ห้องปฏิบัติการ Lab2</gml:name>
+        <gml:description>{"type":"room","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N156"><gml:pos>1469 668</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N157">
+        <gml:name>ห้องเตรียม Lab1</gml:name>
+        <gml:description>{"type":"room","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N157"><gml:pos>1472 814</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N158">
+        <gml:name>ห้องพักอาจารย์</gml:name>
+        <gml:description>{"type":"room","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N158"><gml:pos>1472 999</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N159">
+        <gml:name>ห้องสำนักงาน 2501</gml:name>
+        <gml:description>{"type":"room","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N159"><gml:pos>1188 1049</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N160">
+        <gml:name>ห้องประชุมสาขาวิชา</gml:name>
+        <gml:description>{"type":"room","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N160"><gml:pos>1054 636</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N161">
+        <gml:name>ลิฟท์ ชั้น 5</gml:name>
+        <gml:description>{"type":"elevator","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N161"><gml:pos>1435 1271</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N162">
+        <gml:name>บันไดกลาง</gml:name>
+        <gml:description>{"type":"stair","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N162"><gml:pos>2063 1261</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N163">
+        <gml:name>บันไดขวา</gml:name>
+        <gml:description>{"type":"stair","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N163"><gml:pos>2194 621</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N164">
+        <gml:name>บันไดซ้าย</gml:name>
+        <gml:description>{"type":"stair","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N164"><gml:pos>1310 686</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N165">
+        <gml:name>Door N165</gml:name>
+        <gml:description>{"type":"door","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N165"><gml:pos>2144 733</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N166">
+        <gml:name>Door N166</gml:name>
+        <gml:description>{"type":"door","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N166"><gml:pos>2235 736</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N167">
+        <gml:name>Door N167</gml:name>
+        <gml:description>{"type":"door","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N167"><gml:pos>2141 946</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N168">
+        <gml:name>Door N168</gml:name>
+        <gml:description>{"type":"door","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N168"><gml:pos>2238 943</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N169">
+        <gml:name>Door N169</gml:name>
+        <gml:description>{"type":"door","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N169"><gml:pos>2138 1005</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N170">
+        <gml:name>Door N170</gml:name>
+        <gml:description>{"type":"door","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N170"><gml:pos>2238 1130</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N171">
+        <gml:name>Door N171</gml:name>
+        <gml:description>{"type":"door","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N171"><gml:pos>2019 1218</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N172">
+        <gml:name>Door N172</gml:name>
+        <gml:description>{"type":"door","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N172"><gml:pos>1982 1221</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N173">
+        <gml:name>Door N173</gml:name>
+        <gml:description>{"type":"door","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N173"><gml:pos>1523 1224</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N174">
+        <gml:name>Door N174</gml:name>
+        <gml:description>{"type":"door","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N174"><gml:pos>1435 1224</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N175">
+        <gml:name>Door N175</gml:name>
+        <gml:description>{"type":"door","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N175"><gml:pos>1366 1005</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N176">
+        <gml:name>Door N176</gml:name>
+        <gml:description>{"type":"door","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N176"><gml:pos>1610 1121</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N177">
+        <gml:name>Door N177</gml:name>
+        <gml:description>{"type":"door","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N177"><gml:pos>1635 886</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N178">
+        <gml:name>Door N178</gml:name>
+        <gml:description>{"type":"door","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N178"><gml:pos>1585 799</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N179">
+        <gml:name>Door N179</gml:name>
+        <gml:description>{"type":"door","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N179"><gml:pos>1635 799</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N180">
+        <gml:name>Door N180</gml:name>
+        <gml:description>{"type":"door","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N180"><gml:pos>1607 861</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N181">
+        <gml:name>Door N181</gml:name>
+        <gml:description>{"type":"door","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N181"><gml:pos>1582 749</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N182">
+        <gml:name>Door N182</gml:name>
+        <gml:description>{"type":"door","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N182"><gml:pos>1635 752</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N183">
+        <gml:name>Door N183</gml:name>
+        <gml:description>{"type":"door","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N183"><gml:pos>1623 708</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N184">
+        <gml:name>Door N184</gml:name>
+        <gml:description>{"type":"door","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N184"><gml:pos>1129 739</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N185">
+        <gml:name>Door N185</gml:name>
+        <gml:description>{"type":"door","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N185"><gml:pos>1060 711</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N186">
+        <gml:name>Door N186</gml:name>
+        <gml:description>{"type":"door","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N186"><gml:pos>1266 1136</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N464">
+        <gml:name>corr N464</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N464"><gml:pos>1313 743</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N465">
+        <gml:name>corr N465</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N465"><gml:pos>1313 1168</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N466">
+        <gml:name>corr N466</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N466"><gml:pos>1313 793</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N467">
+        <gml:name>corr N467</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N467"><gml:pos>1313 843</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N468">
+        <gml:name>corr N468</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N468"><gml:pos>1313 893</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N469">
+        <gml:name>corr N469</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N469"><gml:pos>1313 943</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N470">
+        <gml:name>corr N470</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N470"><gml:pos>1313 993</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N471">
+        <gml:name>corr N471</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N471"><gml:pos>1313 1043</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N472">
+        <gml:name>corr N472</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N472"><gml:pos>1313 1093</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N473">
+        <gml:name>corr N473</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N473"><gml:pos>2188 1171</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N474">
+        <gml:name>corr N474</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N474"><gml:pos>1363 1168</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N475">
+        <gml:name>corr N475</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N475"><gml:pos>1413 1168</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N476">
+        <gml:name>corr N476</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N476"><gml:pos>1463 1169</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N477">
+        <gml:name>corr N477</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N477"><gml:pos>1513 1169</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N478">
+        <gml:name>corr N478</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N478"><gml:pos>1563 1169</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N479">
+        <gml:name>corr N479</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N479"><gml:pos>1613 1169</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N480">
+        <gml:name>corr N480</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N480"><gml:pos>1663 1169</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N481">
+        <gml:name>corr N481</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N481"><gml:pos>1713 1169</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N482">
+        <gml:name>corr N482</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N482"><gml:pos>1763 1170</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N483">
+        <gml:name>corr N483</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N483"><gml:pos>1813 1170</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N484">
+        <gml:name>corr N484</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N484"><gml:pos>1863 1170</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N485">
+        <gml:name>corr N485</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N485"><gml:pos>1913 1170</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N486">
+        <gml:name>corr N486</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N486"><gml:pos>1963 1170</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N487">
+        <gml:name>corr N487</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N487"><gml:pos>2013 1170</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N488">
+        <gml:name>corr N488</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N488"><gml:pos>2063 1171</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N489">
+        <gml:name>corr N489</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N489"><gml:pos>2113 1171</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N490">
+        <gml:name>corr N490</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N490"><gml:pos>2188 684</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N491">
+        <gml:name>corr N491</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N491"><gml:pos>2188 1121</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N492">
+        <gml:name>corr N492</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N492"><gml:pos>2188 1071</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N493">
+        <gml:name>corr N493</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N493"><gml:pos>2188 1021</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N494">
+        <gml:name>corr N494</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N494"><gml:pos>2188 971</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N495">
+        <gml:name>corr N495</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N495"><gml:pos>2188 921</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N496">
+        <gml:name>corr N496</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N496"><gml:pos>2188 871</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N497">
+        <gml:name>corr N497</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N497"><gml:pos>2188 821</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N498">
+        <gml:name>corr N498</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N498"><gml:pos>2188 771</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N499">
+        <gml:name>corr N499</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N499"><gml:pos>1613 728</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N500">
+        <gml:name>corr N500</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N500"><gml:pos>1613 1069</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N501">
+        <gml:name>corr N501</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N501"><gml:pos>1613 1019</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N502">
+        <gml:name>corr N502</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N502"><gml:pos>1613 969</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N503">
+        <gml:name>corr N503</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N503"><gml:pos>1613 919</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N504">
+        <gml:name>corr N504</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N504"><gml:pos>1613 819</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N505">
+        <gml:name>corr N505</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N505"><gml:pos>1313 1134</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N506">
+        <gml:name>corr N506</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N506"><gml:pos>1110 1134</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N507">
+        <gml:name>corr N507</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N507"><gml:pos>1213 1134</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N508">
+        <gml:name>corr N508</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N508"><gml:pos>1163 1134</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N509">
+        <gml:name>corr N509</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N509"><gml:pos>1116 1053</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N510">
+        <gml:name>corr N510</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N510"><gml:pos>1163 1018</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N511">
+        <gml:name>corr N511</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N511"><gml:pos>1163 743</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N512">
+        <gml:name>corr N512</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N512"><gml:pos>1163 968</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N513">
+        <gml:name>corr N513</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N513"><gml:pos>1163 918</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N514">
+        <gml:name>corr N514</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N514"><gml:pos>1163 868</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_5_N515">
+        <gml:name>corr N515</gml:name>
+        <gml:description>{"type":"corridor","floor":5}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_5_N515"><gml:pos>1163 818</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember></core:Nodes></core:nodes><core:edges><core:Edges/></core:edges></core:SpaceLayer><core:spaceLayerMember><core:SpaceLayer gml:id="layer_6"><core:nodes><core:Nodes>
+    <core:stateMember>
+      <core:State gml:id="state_6_N144">
+        <gml:name>ห้องบรรยายคอมพิวเตอร์ 8</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N144"><gml:pos>2382 686</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N145">
+        <gml:name>ห้องบรรยายคอมพิวเตอร์ 7</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N145"><gml:pos>2007 686</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N146">
+        <gml:name>ห้องเก็บของ</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N146"><gml:pos>2010 861</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N147">
+        <gml:name>ห้องชมรม</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N147"><gml:pos>2323 861</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N148">
+        <gml:name>ห้องพักบุคลากร</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N148"><gml:pos>2457 861</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N149">
+        <gml:name>ห้องบรรยายคอมพิวเตอร์ 6</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N149"><gml:pos>2373 1046</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N150">
+        <gml:name>ห้องบรรยายคอมพิวเตอร์ 5</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N150"><gml:pos>2010 1036</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N151">
+        <gml:name>Server</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N151"><gml:pos>1929 1114</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N152">
+        <gml:name>ห้องปฏิบัติการคอมพิวเตอร์ 3</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N152"><gml:pos>1751 993</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N153">
+        <gml:name>ห้องปฏิบัติการคอมพิวเตอร์ 4</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N153"><gml:pos>1748 733</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N154">
+        <gml:name>ห้องปฏิบัติการคอมพิวเตอร์ 2</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N154"><gml:pos>1472 974</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N155">
+        <gml:name>ห้องปฏิบัติการคอมพิวเตอร์ 1</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N155"><gml:pos>1485 683</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N156">
+        <gml:name>ห้องสำนักงาน 2601</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N156"><gml:pos>1201 1068</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N157">
+        <gml:name>ห้องค้นคว้า</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N157"><gml:pos>1132 1183</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N158">
+        <gml:name>ห้องประชุมสาขาวิชา</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N158"><gml:pos>1060 652</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N159">
+        <gml:name>ห้องน้ำหญิง</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N159"><gml:pos>1910 1280</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N160">
+        <gml:name>ห้องน้ำชาย</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N160"><gml:pos>1576 1271</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N161">
+        <gml:name>ลิฟท์ ชั้น 6</gml:name>
+        <gml:description>{"type":"elevator","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N161"><gml:pos>1435 1289</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N162">
+        <gml:name>บันไดกลาง</gml:name>
+        <gml:description>{"type":"stair","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N162"><gml:pos>2069 1274</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N163">
+        <gml:name>บันไดขวา</gml:name>
+        <gml:description>{"type":"stair","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N163"><gml:pos>2185 683</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N164">
+        <gml:name>บันไดซ้าย</gml:name>
+        <gml:description>{"type":"stair","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N164"><gml:pos>1319 752</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N165">
+        <gml:name>Door N165</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N165"><gml:pos>2135 764</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N166">
+        <gml:name>Door N166</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N166"><gml:pos>2238 761</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N167">
+        <gml:name>Door N167</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N167"><gml:pos>2138 918</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N168">
+        <gml:name>Door N168</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N168"><gml:pos>2235 921</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N169">
+        <gml:name>Door N169</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N169"><gml:pos>2135 961</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N170">
+        <gml:name>Door N170</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N170"><gml:pos>2235 964</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N171">
+        <gml:name>Door N171</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N171"><gml:pos>1610 1136</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N172">
+        <gml:name>Door N172</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N172"><gml:pos>1573 1139</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N173">
+        <gml:name>Door N173</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N173"><gml:pos>1576 774</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N174">
+        <gml:name>Door N174</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N174"><gml:pos>1598 777</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N175">
+        <gml:name>Door N175</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N175"><gml:pos>1610 858</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N176">
+        <gml:name>Door N176</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N176"><gml:pos>1369 1099</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N177">
+        <gml:name>Door N177</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N177"><gml:pos>1366 780</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N178">
+        <gml:name>Door N178</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N178"><gml:pos>1272 1049</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N179">
+        <gml:name>Door N179</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N179"><gml:pos>1269 1161</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N180">
+        <gml:name>Door N180</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N180"><gml:pos>1138 696</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N181">
+        <gml:name>Door N181</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N181"><gml:pos>2016 1236</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N182">
+        <gml:name>Door N182</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N182"><gml:pos>1985 1236</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N183">
+        <gml:name>Door N183</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N183"><gml:pos>1523 1236</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N184">
+        <gml:name>Door N184</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N184"><gml:pos>1435 1236</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N185">
+        <gml:name>Door N185</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N185"><gml:pos>2404 921</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N144">
+        <gml:name>ห้องบรรยายคอมพิวเตอร์ 8</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N144"><gml:pos>2382 686</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N145">
+        <gml:name>ห้องบรรยายคอมพิวเตอร์ 7</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N145"><gml:pos>2007 686</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N146">
+        <gml:name>ห้องเก็บของ</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N146"><gml:pos>2010 861</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N147">
+        <gml:name>ห้องชมรม</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N147"><gml:pos>2323 861</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N148">
+        <gml:name>ห้องพักบุคลากร</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N148"><gml:pos>2457 861</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N149">
+        <gml:name>ห้องบรรยายคอมพิวเตอร์ 6</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N149"><gml:pos>2373 1046</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N150">
+        <gml:name>ห้องบรรยายคอมพิวเตอร์ 5</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N150"><gml:pos>2010 1036</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N151">
+        <gml:name>Server</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N151"><gml:pos>1929 1114</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N152">
+        <gml:name>ห้องปฏิบัติการคอมพิวเตอร์ 3</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N152"><gml:pos>1751 993</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N153">
+        <gml:name>ห้องปฏิบัติการคอมพิวเตอร์ 4</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N153"><gml:pos>1748 733</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N154">
+        <gml:name>ห้องปฏิบัติการคอมพิวเตอร์ 2</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N154"><gml:pos>1472 974</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N155">
+        <gml:name>ห้องปฏิบัติการคอมพิวเตอร์ 1</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N155"><gml:pos>1485 683</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N156">
+        <gml:name>ห้องสำนักงาน 2601</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N156"><gml:pos>1201 1068</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N157">
+        <gml:name>ห้องค้นคว้า</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N157"><gml:pos>1132 1183</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N158">
+        <gml:name>ห้องประชุมสาขาวิชา</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N158"><gml:pos>1060 652</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N159">
+        <gml:name>ห้องน้ำหญิง</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N159"><gml:pos>1910 1280</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N160">
+        <gml:name>ห้องน้ำชาย</gml:name>
+        <gml:description>{"type":"room","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N160"><gml:pos>1576 1271</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N161">
+        <gml:name>ลิฟท์ ชั้น 6</gml:name>
+        <gml:description>{"type":"elevator","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N161"><gml:pos>1435 1289</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N162">
+        <gml:name>บันไดกลาง</gml:name>
+        <gml:description>{"type":"stair","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N162"><gml:pos>2069 1274</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N163">
+        <gml:name>บันไดขวา</gml:name>
+        <gml:description>{"type":"stair","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N163"><gml:pos>2185 683</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N164">
+        <gml:name>บันไดซ้าย</gml:name>
+        <gml:description>{"type":"stair","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N164"><gml:pos>1319 752</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N165">
+        <gml:name>Door N165</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N165"><gml:pos>2135 764</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N166">
+        <gml:name>Door N166</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N166"><gml:pos>2238 761</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N167">
+        <gml:name>Door N167</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N167"><gml:pos>2138 918</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N168">
+        <gml:name>Door N168</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N168"><gml:pos>2235 921</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N169">
+        <gml:name>Door N169</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N169"><gml:pos>2135 961</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N170">
+        <gml:name>Door N170</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N170"><gml:pos>2235 964</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N171">
+        <gml:name>Door N171</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N171"><gml:pos>1610 1136</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N172">
+        <gml:name>Door N172</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N172"><gml:pos>1573 1139</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N173">
+        <gml:name>Door N173</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N173"><gml:pos>1576 774</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N174">
+        <gml:name>Door N174</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N174"><gml:pos>1598 777</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N175">
+        <gml:name>Door N175</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N175"><gml:pos>1610 858</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N176">
+        <gml:name>Door N176</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N176"><gml:pos>1369 1099</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N177">
+        <gml:name>Door N177</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N177"><gml:pos>1366 780</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N178">
+        <gml:name>Door N178</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N178"><gml:pos>1272 1049</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N179">
+        <gml:name>Door N179</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N179"><gml:pos>1269 1161</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N180">
+        <gml:name>Door N180</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N180"><gml:pos>1138 696</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N181">
+        <gml:name>Door N181</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N181"><gml:pos>2016 1236</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N182">
+        <gml:name>Door N182</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N182"><gml:pos>1985 1236</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N183">
+        <gml:name>Door N183</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N183"><gml:pos>1523 1236</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N184">
+        <gml:name>Door N184</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N184"><gml:pos>1435 1236</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N185">
+        <gml:name>Door N185</gml:name>
+        <gml:description>{"type":"door","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N185"><gml:pos>2404 921</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N516">
+        <gml:name>corr N516</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N516"><gml:pos>1320 777</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N517">
+        <gml:name>corr N517</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N517"><gml:pos>1313 1177</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N518">
+        <gml:name>corr N518</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N518"><gml:pos>1319 827</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N519">
+        <gml:name>corr N519</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N519"><gml:pos>1318 877</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N520">
+        <gml:name>corr N520</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N520"><gml:pos>1317 927</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N521">
+        <gml:name>corr N521</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N521"><gml:pos>1317 977</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N522">
+        <gml:name>corr N522</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N522"><gml:pos>1316 1027</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N523">
+        <gml:name>corr N523</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N523"><gml:pos>1315 1077</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N524">
+        <gml:name>corr N524</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N524"><gml:pos>1314 1127</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N525">
+        <gml:name>corr N525</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N525"><gml:pos>2188 1180</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N526">
+        <gml:name>corr N526</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N526"><gml:pos>1363 1177</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N527">
+        <gml:name>corr N527</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N527"><gml:pos>1413 1177</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N528">
+        <gml:name>corr N528</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N528"><gml:pos>1463 1178</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N529">
+        <gml:name>corr N529</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N529"><gml:pos>1513 1178</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N530">
+        <gml:name>corr N530</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N530"><gml:pos>1563 1178</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N531">
+        <gml:name>corr N531</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N531"><gml:pos>1613 1178</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N532">
+        <gml:name>corr N532</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N532"><gml:pos>1663 1178</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N533">
+        <gml:name>corr N533</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N533"><gml:pos>1713 1178</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N534">
+        <gml:name>corr N534</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N534"><gml:pos>1763 1179</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N535">
+        <gml:name>corr N535</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N535"><gml:pos>1813 1179</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N536">
+        <gml:name>corr N536</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N536"><gml:pos>1863 1179</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N537">
+        <gml:name>corr N537</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N537"><gml:pos>1913 1179</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N538">
+        <gml:name>corr N538</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N538"><gml:pos>1963 1179</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N539">
+        <gml:name>corr N539</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N539"><gml:pos>2013 1179</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N540">
+        <gml:name>corr N540</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N540"><gml:pos>2063 1180</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N541">
+        <gml:name>corr N541</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N541"><gml:pos>2113 1180</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N542">
+        <gml:name>corr N542</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N542"><gml:pos>2188 712</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N543">
+        <gml:name>corr N543</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N543"><gml:pos>2188 1130</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N544">
+        <gml:name>corr N544</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N544"><gml:pos>2188 1080</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N545">
+        <gml:name>corr N545</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N545"><gml:pos>2188 1030</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N546">
+        <gml:name>corr N546</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N546"><gml:pos>2188 980</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N547">
+        <gml:name>corr N547</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N547"><gml:pos>2188 930</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N548">
+        <gml:name>corr N548</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N548"><gml:pos>2188 880</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N549">
+        <gml:name>corr N549</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N549"><gml:pos>2188 830</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N550">
+        <gml:name>corr N550</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N550"><gml:pos>2188 780</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N551">
+        <gml:name>corr N551</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N551"><gml:pos>1620 777</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N552">
+        <gml:name>corr N552</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N552"><gml:pos>1615 1078</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N553">
+        <gml:name>corr N553</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N553"><gml:pos>1616 1028</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N554">
+        <gml:name>corr N554</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N554"><gml:pos>1616 978</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N555">
+        <gml:name>corr N555</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N555"><gml:pos>1617 928</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N556">
+        <gml:name>corr N556</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N556"><gml:pos>1618 878</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N557">
+        <gml:name>corr N557</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N557"><gml:pos>1619 828</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N558">
+        <gml:name>corr N558</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N558"><gml:pos>1520 777</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N559">
+        <gml:name>corr N559</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N559"><gml:pos>1470 777</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N560">
+        <gml:name>corr N560</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N560"><gml:pos>1420 777</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N561">
+        <gml:name>corr N561</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N561"><gml:pos>1573 1089</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N562">
+        <gml:name>corr N562</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N562"><gml:pos>1574 1039</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N563">
+        <gml:name>corr N563</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N563"><gml:pos>1574 989</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N564">
+        <gml:name>corr N564</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N564"><gml:pos>1575 939</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N565">
+        <gml:name>corr N565</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N565"><gml:pos>1575 889</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N566">
+        <gml:name>corr N566</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N566"><gml:pos>1575 839</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N567">
+        <gml:name>corr N567</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N567"><gml:pos>2288 926</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N568">
+        <gml:name>corr N568</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N568"><gml:pos>2338 924</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N569">
+        <gml:name>corr N569</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N569"><gml:pos>1163 1030</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N570">
+        <gml:name>corr N570</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N570"><gml:pos>1223 1040</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N571">
+        <gml:name>corr N571</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N571"><gml:pos>1166 699</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N572">
+        <gml:name>corr N572</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N572"><gml:pos>1163 980</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N573">
+        <gml:name>corr N573</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N573"><gml:pos>1164 930</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N574">
+        <gml:name>corr N574</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N574"><gml:pos>1164 880</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N575">
+        <gml:name>corr N575</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N575"><gml:pos>1165 830</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
+    </core:stateMember>
+    <core:stateMember>
+      <core:State gml:id="state_6_N576">
+        <gml:name>corr N576</gml:name>
+        <gml:description>{"type":"corridor","floor":6}</gml:description>
+        <core:dualGraph><gml:Point gml:id="pt_6_N576"><gml:pos>1165 780</gml:pos></gml:Point></core:dualGraph>
+      </core:State>
     </core:stateMember></core:Nodes></core:nodes><core:edges><core:Edges>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_0">
+      <core:Transition gml:id="tr_6_0">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N464" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N466"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N516"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N518"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_1">
+      <core:Transition gml:id="tr_6_1">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N466" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N467"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N518"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N519"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_2">
+      <core:Transition gml:id="tr_6_2">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N467" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N468"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N519"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N520"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_3">
+      <core:Transition gml:id="tr_6_3">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N468" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N469"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N520"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N521"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_4">
+      <core:Transition gml:id="tr_6_4">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N469" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N470"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N521"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N522"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_5">
+      <core:Transition gml:id="tr_6_5">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N470" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N471"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N522"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N523"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_6">
+      <core:Transition gml:id="tr_6_6">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N471" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N472"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N523"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N524"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_7">
+      <core:Transition gml:id="tr_6_7">
+        <core:weight>1.000</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N524"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N517"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_8">
+        <core:weight>1.000</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N517"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N526"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_9">
+        <core:weight>1.000</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N526"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N527"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_10">
+        <core:weight>1.000</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N527"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N528"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_11">
+        <core:weight>1.000</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N528"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N529"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_12">
+        <core:weight>1.000</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N529"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N530"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_13">
+        <core:weight>1.000</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N530"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N531"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_14">
+        <core:weight>1.000</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N531"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N532"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_15">
+        <core:weight>1.000</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N532"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N533"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_16">
+        <core:weight>1.000</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N533"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N534"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_17">
+        <core:weight>1.000</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N534"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N535"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_18">
+        <core:weight>1.000</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N535"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N536"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_19">
+        <core:weight>1.000</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N536"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N537"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_20">
+        <core:weight>1.000</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N537"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N538"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_21">
+        <core:weight>1.000</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N538"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N539"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_22">
+        <core:weight>1.000</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N539"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N540"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_23">
+        <core:weight>1.000</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N540"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N541"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_24">
         <core:weight>1.500</core:weight>
-        <core:connects xlink:href="#state_5_N472" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N465"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N541"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N525"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_8">
+      <core:Transition gml:id="tr_6_25">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N465" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N474"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N525"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N543"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_9">
+      <core:Transition gml:id="tr_6_26">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N474" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N475"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N543"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N544"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_10">
+      <core:Transition gml:id="tr_6_27">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N475" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N476"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N544"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N545"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_11">
+      <core:Transition gml:id="tr_6_28">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N476" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N477"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N545"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N546"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_12">
+      <core:Transition gml:id="tr_6_29">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N477" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N478"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N546"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N547"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_13">
+      <core:Transition gml:id="tr_6_30">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N478" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N479"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N547"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N548"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_14">
+      <core:Transition gml:id="tr_6_31">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N479" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N480"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N548"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N549"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_15">
+      <core:Transition gml:id="tr_6_32">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N480" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N481"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N549"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N550"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_16">
+      <core:Transition gml:id="tr_6_33">
+        <core:weight>1.360</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N550"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N542"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_34">
+        <core:weight>0.842</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N531"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_27"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_35">
+        <core:weight>1.164</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_27"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N552"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_36">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N481" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N482"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N552"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N553"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_17">
+      <core:Transition gml:id="tr_6_37">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N482" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N483"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N553"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N554"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_18">
+      <core:Transition gml:id="tr_6_38">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N483" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N484"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N554"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N555"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_19">
+      <core:Transition gml:id="tr_6_39">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N484" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N485"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N555"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N556"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_20">
+      <core:Transition gml:id="tr_6_40">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N485" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N486"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N556"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N557"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_21">
+      <core:Transition gml:id="tr_6_41">
+        <core:weight>1.020</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N557"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N551"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_42">
+        <core:weight>0.882</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N551"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_29"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_43">
+        <core:weight>1.122</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_29"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N558"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_44">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N486" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N487"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N558"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N559"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_22">
+      <core:Transition gml:id="tr_6_45">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N487" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N488"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N559"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N560"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_23">
+      <core:Transition gml:id="tr_6_46">
+        <core:weight>1.082</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N560"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_33"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_47">
+        <core:weight>0.922</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_33"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N516"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_48">
+        <core:weight>0.805</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N530"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N172"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_49">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N488" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N489"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N172"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N561"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_24">
-        <core:weight>1.500</core:weight>
-        <core:connects xlink:href="#state_5_N489" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N473"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
-      </core:Transition>
-    </core:transitionMember>
-    <core:transitionMember>
-      <core:Transition gml:id="tr_5_25">
+      <core:Transition gml:id="tr_6_50">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N473" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N491"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N561"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N562"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_26">
+      <core:Transition gml:id="tr_6_51">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N491" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N492"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N562"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N563"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_27">
+      <core:Transition gml:id="tr_6_52">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N492" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N493"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N563"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N564"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_28">
+      <core:Transition gml:id="tr_6_53">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N493" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N494"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N564"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N565"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_29">
+      <core:Transition gml:id="tr_6_54">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N494" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N495"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N565"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N566"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_30">
+      <core:Transition gml:id="tr_6_55">
+        <core:weight>1.300</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N566"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N173"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_56">
+        <core:weight>0.957</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N547"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_24"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_57">
+        <core:weight>1.065</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_24"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N567"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_58">
+        <core:weight>1.001</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N567"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N568"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_59">
+        <core:weight>1.321</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N568"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N185"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_60">
+        <core:weight>0.984</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N522"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N178"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_61">
+        <core:weight>0.996</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N178"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N570"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_62">
+        <core:weight>1.217</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N570"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N569"/>
+      </core:Transition>
+    </core:transitionMember>
+    <core:transitionMember>
+      <core:Transition gml:id="tr_6_63">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N495" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N496"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N569"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N572"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_31">
+      <core:Transition gml:id="tr_6_64">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N496" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N497"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N572"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N573"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_32">
+      <core:Transition gml:id="tr_6_65">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N497" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N498"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N573"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N574"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_33">
-        <core:weight>1.740</core:weight>
-        <core:connects xlink:href="#state_5_N498" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N490"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
-      </core:Transition>
-    </core:transitionMember>
-    <core:transitionMember>
-      <core:Transition gml:id="tr_5_34">
-        <core:weight>0.962</core:weight>
-        <core:connects xlink:href="#state_5_N479" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_32"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
-      </core:Transition>
-    </core:transitionMember>
-    <core:transitionMember>
-      <core:Transition gml:id="tr_5_35">
-        <core:weight>1.042</core:weight>
-        <core:connects xlink:href="#state_5_32" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N500"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
-      </core:Transition>
-    </core:transitionMember>
-    <core:transitionMember>
-      <core:Transition gml:id="tr_5_36">
+      <core:Transition gml:id="tr_6_66">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N500" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N501"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N574"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N575"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_37">
+      <core:Transition gml:id="tr_6_67">
         <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N501" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N502"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N575"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N576"/>
       </core:Transition>
     </core:transitionMember>
     <core:transitionMember>
-      <core:Transition gml:id="tr_5_38">
-        <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N502" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N503"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
+      <core:Transition gml:id="tr_6_68">
+        <core:weight>1.620</core:weight>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N576"/>
+        <core:connects xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state_6_N571"/>
       </core:Transition>
-    </core:transitionMember>
-    <core:transitionMember>
-      <core:Transition gml:id="tr_5_39">
-        <core:weight>1.166</core:weight>
-        <core:connects xlink:href="#state_5_N503" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_36"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
-      </core:Transition>
-    </core:transitionMember>
-    <core:transitionMember>
-      <core:Transition gml:id="tr_5_40">
-        <core:weight>0.849</core:weight>
-        <core:connects xlink:href="#state_5_36" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N504"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
-      </core:Transition>
-    </core:transitionMember>
-    <core:transitionMember>
-      <core:Transition gml:id="tr_5_41">
-        <core:weight>1.820</core:weight>
-        <core:connects xlink:href="#state_5_N504" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N499"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
-      </core:Transition>
-    </core:transitionMember>
-    <core:transitionMember>
-      <core:Transition gml:id="tr_5_42">
-        <core:weight>0.941</core:weight>
-        <core:connects xlink:href="#state_5_N505" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_42"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
-      </core:Transition>
-    </core:transitionMember>
-    <core:transitionMember>
-      <core:Transition gml:id="tr_5_43">
-        <core:weight>1.061</core:weight>
-        <core:connects xlink:href="#state_5_42" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N507"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
-      </core:Transition>
-    </core:transitionMember>
-    <core:transitionMember>
-      <core:Transition gml:id="tr_5_44">
-        <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N507" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N508"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
-      </core:Transition>
-    </core:transitionMember>
-    <core:transitionMember>
-      <core:Transition gml:id="tr_5_45">
-        <core:weight>1.060</core:weight>
-        <core:connects xlink:href="#state_5_N508" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N506"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
-      </core:Transition>
-    </core:transitionMember>
-    <core:transitionMember>
-      <core:Transition gml:id="tr_5_46">
-        <core:weight>1.624</core:weight>
-        <core:connects xlink:href="#state_5_N506" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N509"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
-      </core:Transition>
-    </core:transitionMember>
-    <core:transitionMember>
-      <core:Transition gml:id="tr_5_47">
-        <core:weight>1.172</core:weight>
-        <core:connects xlink:href="#state_5_N509" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N510"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
-      </core:Transition>
-    </core:transitionMember>
-    <core:transitionMember>
-      <core:Transition gml:id="tr_5_48">
-        <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N510" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N512"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
-      </core:Transition>
-    </core:transitionMember>
-    <core:transitionMember>
-      <core:Transition gml:id="tr_5_49">
-        <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N512" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N513"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
-      </core:Transition>
-    </core:transitionMember>
-    <core:transitionMember>
-      <core:Transition gml:id="tr_5_50">
-        <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N513" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N514"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
-      </core:Transition>
-    </core:transitionMember>
-    <core:transitionMember>
-      <core:Transition gml:id="tr_5_51">
-        <core:weight>1.000</core:weight>
-        <core:connects xlink:href="#state_5_N514" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N515"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
-      </core:Transition>
-    </core:transitionMember>
-    <core:transitionMember>
-      <core:Transition gml:id="tr_5_52">
-        <core:weight>1.500</core:weight>
-        <core:connects xlink:href="#state_5_N515" xmlns:xlink="http://www.w3.org/1999/xlink"/>
-        <core:connects xlink:href="#state_5_N511"   xmlns:xlink="http://www.w3.org/1999/xlink"/>
-      </core:Transition>
-    </core:transitionMember></core:Edges></core:SpaceLayer></core:spaceLayerMember><core:spaceLayerMember><core:SpaceLayer gml:id="layer_6"><core:nodes><core:Nodes>
-    <core:stateMember>
-      <core:State gml:id="state_6_N144">
-        <gml:name>ห้องบรรยายคอมพิวเตอร์ 8</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N144"><gml:pos>2382 686</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N145">
-        <gml:name>ห้องบรรยายคอมพิวเตอร์ 7</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N145"><gml:pos>2007 686</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N146">
-        <gml:name>ห้องเก็บของ</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N146"><gml:pos>2010 861</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N147">
-        <gml:name>ห้องชมรม</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N147"><gml:pos>2323 861</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N148">
-        <gml:name>ห้องพักบุคลากร</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N148"><gml:pos>2457 861</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N149">
-        <gml:name>ห้องบรรยายคอมพิวเตอร์ 6</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N149"><gml:pos>2373 1046</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N150">
-        <gml:name>ห้องบรรยายคอมพิวเตอร์ 5</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N150"><gml:pos>2010 1036</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N151">
-        <gml:name>Server</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N151"><gml:pos>1929 1114</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N152">
-        <gml:name>ห้องปฏิบัติการคอมพิวเตอร์ 3</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N152"><gml:pos>1751 993</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N153">
-        <gml:name>ห้องปฏิบัติการคอมพิวเตอร์ 4</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N153"><gml:pos>1748 733</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N154">
-        <gml:name>ห้องปฏิบัติการคอมพิวเตอร์ 2</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N154"><gml:pos>1472 974</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N155">
-        <gml:name>ห้องปฏิบัติการคอมพิวเตอร์ 1</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N155"><gml:pos>1485 683</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N156">
-        <gml:name>ห้องสำนักงาน 2601</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N156"><gml:pos>1201 1068</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N157">
-        <gml:name>ห้องค้นคว้า</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N157"><gml:pos>1132 1183</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N158">
-        <gml:name>ห้องประชุมสาขาวิชา</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N158"><gml:pos>1060 652</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N159">
-        <gml:name>ห้องน้ำหญิง</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N159"><gml:pos>1910 1280</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N160">
-        <gml:name>ห้องน้ำชาย</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N160"><gml:pos>1576 1271</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N161">
-        <gml:name>ลิฟท์ ชั้น 6</gml:name>
-        <gml:description>{"type":"elevator","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N161"><gml:pos>1435 1289</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N162">
-        <gml:name>บันไดกลาง</gml:name>
-        <gml:description>{"type":"stair","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N162"><gml:pos>2069 1274</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N163">
-        <gml:name>บันไดขวา</gml:name>
-        <gml:description>{"type":"stair","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N163"><gml:pos>2185 683</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N164">
-        <gml:name>บันไดซ้าย</gml:name>
-        <gml:description>{"type":"stair","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N164"><gml:pos>1319 752</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N165">
-        <gml:name>Door N165</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N165"><gml:pos>2135 764</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N166">
-        <gml:name>Door N166</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N166"><gml:pos>2238 761</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N167">
-        <gml:name>Door N167</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N167"><gml:pos>2138 918</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N168">
-        <gml:name>Door N168</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N168"><gml:pos>2235 921</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N169">
-        <gml:name>Door N169</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N169"><gml:pos>2135 961</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N170">
-        <gml:name>Door N170</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N170"><gml:pos>2235 964</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N171">
-        <gml:name>Door N171</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N171"><gml:pos>1610 1136</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N172">
-        <gml:name>Door N172</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N172"><gml:pos>1573 1139</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N173">
-        <gml:name>Door N173</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N173"><gml:pos>1576 774</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N174">
-        <gml:name>Door N174</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N174"><gml:pos>1598 777</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N175">
-        <gml:name>Door N175</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N175"><gml:pos>1610 858</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N176">
-        <gml:name>Door N176</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N176"><gml:pos>1369 1099</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N177">
-        <gml:name>Door N177</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N177"><gml:pos>1366 780</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N178">
-        <gml:name>Door N178</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N178"><gml:pos>1272 1049</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N179">
-        <gml:name>Door N179</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N179"><gml:pos>1269 1161</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N180">
-        <gml:name>Door N180</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N180"><gml:pos>1138 696</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N181">
-        <gml:name>Door N181</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N181"><gml:pos>2016 1236</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N182">
-        <gml:name>Door N182</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N182"><gml:pos>1985 1236</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N183">
-        <gml:name>Door N183</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N183"><gml:pos>1523 1236</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N184">
-        <gml:name>Door N184</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N184"><gml:pos>1435 1236</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N185">
-        <gml:name>Door N185</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N185"><gml:pos>2404 921</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N144">
-        <gml:name>ห้องบรรยายคอมพิวเตอร์ 8</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N144"><gml:pos>2382 686</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N145">
-        <gml:name>ห้องบรรยายคอมพิวเตอร์ 7</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N145"><gml:pos>2007 686</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N146">
-        <gml:name>ห้องเก็บของ</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N146"><gml:pos>2010 861</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N147">
-        <gml:name>ห้องชมรม</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N147"><gml:pos>2323 861</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N148">
-        <gml:name>ห้องพักบุคลากร</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N148"><gml:pos>2457 861</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N149">
-        <gml:name>ห้องบรรยายคอมพิวเตอร์ 6</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N149"><gml:pos>2373 1046</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N150">
-        <gml:name>ห้องบรรยายคอมพิวเตอร์ 5</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N150"><gml:pos>2010 1036</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N151">
-        <gml:name>Server</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N151"><gml:pos>1929 1114</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N152">
-        <gml:name>ห้องปฏิบัติการคอมพิวเตอร์ 3</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N152"><gml:pos>1751 993</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N153">
-        <gml:name>ห้องปฏิบัติการคอมพิวเตอร์ 4</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N153"><gml:pos>1748 733</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N154">
-        <gml:name>ห้องปฏิบัติการคอมพิวเตอร์ 2</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N154"><gml:pos>1472 974</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N155">
-        <gml:name>ห้องปฏิบัติการคอมพิวเตอร์ 1</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N155"><gml:pos>1485 683</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N156">
-        <gml:name>ห้องสำนักงาน 2601</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N156"><gml:pos>1201 1068</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N157">
-        <gml:name>ห้องค้นคว้า</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N157"><gml:pos>1132 1183</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N158">
-        <gml:name>ห้องประชุมสาขาวิชา</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N158"><gml:pos>1060 652</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N159">
-        <gml:name>ห้องน้ำหญิง</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N159"><gml:pos>1910 1280</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N160">
-        <gml:name>ห้องน้ำชาย</gml:name>
-        <gml:description>{"type":"room","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N160"><gml:pos>1576 1271</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N161">
-        <gml:name>ลิฟท์ ชั้น 6</gml:name>
-        <gml:description>{"type":"elevator","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N161"><gml:pos>1435 1289</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N162">
-        <gml:name>บันไดกลาง</gml:name>
-        <gml:description>{"type":"stair","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N162"><gml:pos>2069 1274</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N163">
-        <gml:name>บันไดขวา</gml:name>
-        <gml:description>{"type":"stair","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N163"><gml:pos>2185 683</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N164">
-        <gml:name>บันไดซ้าย</gml:name>
-        <gml:description>{"type":"stair","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N164"><gml:pos>1319 752</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N165">
-        <gml:name>Door N165</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N165"><gml:pos>2135 764</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N166">
-        <gml:name>Door N166</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N166"><gml:pos>2238 761</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N167">
-        <gml:name>Door N167</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N167"><gml:pos>2138 918</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N168">
-        <gml:name>Door N168</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N168"><gml:pos>2235 921</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N169">
-        <gml:name>Door N169</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N169"><gml:pos>2135 961</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N170">
-        <gml:name>Door N170</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N170"><gml:pos>2235 964</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N171">
-        <gml:name>Door N171</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N171"><gml:pos>1610 1136</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N172">
-        <gml:name>Door N172</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N172"><gml:pos>1573 1139</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N173">
-        <gml:name>Door N173</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N173"><gml:pos>1576 774</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N174">
-        <gml:name>Door N174</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N174"><gml:pos>1598 777</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N175">
-        <gml:name>Door N175</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N175"><gml:pos>1610 858</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N176">
-        <gml:name>Door N176</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N176"><gml:pos>1369 1099</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N177">
-        <gml:name>Door N177</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N177"><gml:pos>1366 780</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N178">
-        <gml:name>Door N178</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N178"><gml:pos>1272 1049</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N179">
-        <gml:name>Door N179</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N179"><gml:pos>1269 1161</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N180">
-        <gml:name>Door N180</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N180"><gml:pos>1138 696</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N181">
-        <gml:name>Door N181</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N181"><gml:pos>2016 1236</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N182">
-        <gml:name>Door N182</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N182"><gml:pos>1985 1236</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N183">
-        <gml:name>Door N183</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N183"><gml:pos>1523 1236</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N184">
-        <gml:name>Door N184</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N184"><gml:pos>1435 1236</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember>
-    <core:stateMember>
-      <core:State gml:id="state_6_N185">
-        <gml:name>Door N185</gml:name>
-        <gml:description>{"type":"door","floor":6}</gml:description>
-        <core:dualGraph><gml:Point gml:id="pt_6_N185"><gml:pos>2404 921</gml:pos></gml:Point></core:dualGraph>
-      </core:State>
-    </core:stateMember></core:Nodes></core:nodes><core:edges><core:Edges></core:Edges></core:SpaceLayer></core:spaceLayerMember></core:SpaceLayers></core:spaceLayers>
+    </core:transitionMember></core:Edges></core:edges></core:SpaceLayer></core:spaceLayerMember></core:spaceLayerMember>
       
-    </core:MultiLayeredGraph>
-  </core:multiLayeredGraph>
-</core:IndoorFeatures>
+    </core:spaceLayerMember>
+  </core:spaceLayerMember>
+</core:spaceLayerMember></core:spaceLayerMember></core:SpaceLayers></core:spaceLayers></core:MultiLayeredGraph></core:multiLayeredGraph></core:IndoorFeatures>
