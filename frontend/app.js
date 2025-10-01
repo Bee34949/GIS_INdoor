@@ -1460,6 +1460,358 @@ function updateMeasure(dMeters){
   el.textContent = `${dMeters.toFixed(1)} m`;
 }
 
+// FILE: frontend/app.js  (Patch: Route Animation + Follow Camera + Click-to-pick nodes)
+
+// ========== [1] Runtime: Route Animation ==========
+// FILE: frontend/app.js  (Patch: Follow Zoom further away + UI control)
+
+// ========== [1] Runtime: Route Animation ==========
+// FILE: frontend/app.js  (Patch: stop compounding zoom while following)
+
+// ========== [1] Runtime: Route Animation ==========
+const RouteAnim = (() => {
+  const s = {
+    segments: [],
+    meta: null,
+    idxByFloor: {},
+    flatByFloor: {},
+    playing: false,
+    follow: true,
+    speedMs: 450,
+    followZoom: 0.9,         // ใช้เมื่อปลดล็อกซูมเท่านั้น
+    lockZoom: true,          // แพนอย่างเดียว (ป้องกันซูมสะสม)
+    baseView: null,          // {w,h} เก็บขนาดฐานของกล้อง
+    rafId: 0,
+    lastTick: 0,
+  };
+
+  function resetState() {
+    s.segments = [];
+    s.meta = null;
+    s.idxByFloor = {};
+    s.flatByFloor = {};
+    s.playing = false;
+    s.rafId && cancelAnimationFrame(s.rafId);
+    s.rafId = 0;
+    s.lastTick = 0;
+    s.baseView = null;       // รีเซ็ตฐาน
+  }
+
+  function flattenSegments() {
+    s.flatByFloor = {};
+    s.idxByFloor = {};
+    for (const seg of s.segments || []) {
+      if (!seg?.nodes?.length) continue;
+      s.flatByFloor[seg.floor] = [...seg.nodes];
+      s.idxByFloor[seg.floor] = 0;
+    }
+  }
+
+  function load(segments, meta) {
+    resetState();
+    s.segments = segments || [];
+    s.meta = meta || { byKey: {} };
+    flattenSegments();
+    drawAllFloors();
+  }
+
+  function visiblePointsOfFloor(floor, uptoIdx) {
+    const arr = s.flatByFloor[floor] || [];
+    const n = Math.max(0, Math.min(uptoIdx, arr.length - 1));
+    return arr.slice(0, n + 1).map(k => s.meta.byKey[k]).filter(Boolean);
+  }
+
+  function drawAllFloors() {
+    const svg = svgEl(); if (!svg) return;
+    svg.querySelectorAll(".path-line-anim,.anim-dot").forEach(el => el.remove());
+
+    const floor = currentFloor;
+    const idx = s.idxByFloor[floor] ?? 0;
+    const pts = visiblePointsOfFloor(floor, idx);
+    if (pts.length >= 2) {
+      const pl = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
+      pl.setAttribute("points", pts.map(p => `${p.x},${p.y}`).join(" "));
+      pl.setAttribute("fill", "none");
+      pl.setAttribute("stroke", "red");
+      pl.setAttribute("stroke-width", "3");
+      pl.classList.add("path-line-anim");
+      svg.appendChild(pl);
+    }
+    if (pts.length) {
+      const first = pts[0], cur = pts[pts.length - 1];
+      addAnimDot(svg, first.x, first.y, 5, "green");
+      addAnimDot(svg, cur.x, cur.y, 5, "red");
+      if (s.follow) followPoint(cur);
+    }
+  }
+
+  function addAnimDot(svg, x, y, r, color) {
+    const c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    c.setAttribute("cx", x); c.setAttribute("cy", y);
+    c.setAttribute("r", r);
+    c.setAttribute("fill", color);
+    c.setAttribute("stroke", "black");
+    c.setAttribute("stroke-width", 1.5);
+    c.classList.add("anim-dot");
+    svg.appendChild(c);
+  }
+
+  function nextStep() {
+    const floor = currentFloor;
+    const arr = s.flatByFloor[floor] || [];
+    if (!arr.length) return false;
+    const cur = s.idxByFloor[floor] ?? 0;
+    if (cur >= arr.length - 1) return false;
+    s.idxByFloor[floor] = cur + 1;
+    drawAllFloors();
+    return true;
+  }
+
+  function prevStep() {
+    const floor = currentFloor;
+    const arr = s.flatByFloor[floor] || [];
+    if (!arr.length) return false;
+    const cur = s.idxByFloor[floor] ?? 0;
+    if (cur <= 0) return false;
+    s.idxByFloor[floor] = cur - 1;
+    drawAllFloors();
+    return true;
+  }
+
+  function reset() {
+    for (const f of Object.keys(s.idxByFloor)) s.idxByFloor[f] = 0;
+    s.playing = false;
+    s.rafId && cancelAnimationFrame(s.rafId);
+    s.rafId = 0;
+    s.baseView = null; // เคลียร์ฐานเมื่อรีเซ็ต
+    drawAllFloors();
+  }
+
+  function play() {
+    if (s.playing) return;
+    s.playing = true;
+    s.lastTick = 0;
+    s.baseView = null; // กำหนดใหม่ตอนเล่น
+    loop(0);
+  }
+
+  function pause() {
+    s.playing = false;
+    s.rafId && cancelAnimationFrame(s.rafId);
+    s.rafId = 0;
+  }
+
+  function loop(ts) {
+    if (!s.playing) return;
+    if (!s.lastTick) s.lastTick = ts;
+    const elapsed = ts - s.lastTick;
+    if (elapsed >= s.speedMs) {
+      if (!nextStep()) { pause(); return; }
+      s.lastTick = ts;
+    }
+    s.rafId = requestAnimationFrame(loop);
+  }
+
+  function ensureBaseView(svg) {
+    if (!s.baseView && svg?._view) {
+      // เก็บครั้งเดียวเป็นฐานอ้างอิงซูม (ไม่เปลี่ยนตามเฟรม)
+      s.baseView = { w: svg._view.w, h: svg._view.h };
+    }
+  }
+
+  function followPoint(p) {
+    const svg = svgEl(); if (!svg || !p) return;
+    ensureBaseView(svg);
+    smoothPanZoomTo(svg, p.x, p.y, {
+      lockZoom: s.lockZoom,
+      baseView: s.baseView,
+      zoomTarget: s.followZoom,
+      ms: 380
+    });
+  }
+
+  function setSpeed(ms) { s.speedMs = Math.max(80, Number(ms) || 450); }
+  function setFollow(v) { s.follow = !!v; if (!v) s.baseView = null; else drawAllFloors(); }
+  function setFollowZoom(z) {
+    const n = Math.max(0.7, Math.min(1.2, Number(z) || 0.9));
+    s.followZoom = n;
+  }
+  function setLockZoom(v) {
+    s.lockZoom = !!v;
+    if (!v) s.baseView = null; // ปลดล็อกให้จับฐานใหม่ทันที
+  }
+
+  return {
+    load, nextStep, prevStep, reset, play, pause,
+    setSpeed, setFollow, setFollowZoom, setLockZoom
+  };
+})();
+
+// ========== [2] Smooth Pan/Zoom (no compounding) ==========
+function smoothPanZoomTo(svg, cx, cy, { lockZoom = true, baseView = null, zoomTarget = 0.9, ms = 400 } = {}) {
+  const view = svg?._view; if (!view) return;
+
+  const start = { x: view.x, y: view.y, w: view.w, h: view.h };
+
+  // ถ้าล็อกซูม: ใช้ขนาดเดิม (แพนอย่างเดียว)
+  // ถ้าไม่ล็อก: อิงขนาด "ฐาน" ที่คงที่ ไม่คูณสะสมกับเฟรมก่อนหน้า
+  const refW = lockZoom ? start.w : (baseView?.w ?? start.w);
+  const refH = lockZoom ? start.h : (baseView?.h ?? start.h);
+
+  const targetW = lockZoom ? refW : Math.max(view.minW, Math.min(view.maxW, refW * zoomTarget));
+  const targetH = lockZoom ? refH : targetW * (refH / refW);
+
+  const tx = Math.max(0, cx - targetW / 2);
+  const ty = Math.max(0, cy - targetH / 2);
+
+  const end = { x: tx, y: ty, w: targetW, h: targetH };
+  const t0 = performance.now();
+  const ease = t => (t < 0.5 ? 2*t*t : -1 + (4 - 2*t)*t);
+
+  function step(now) {
+    const k = Math.min(1, (now - t0) / ms);
+    const e = ease(k);
+    view.x = start.x + (end.x - start.x) * e;
+    view.y = start.y + (end.y - start.y) * e;
+    view.w = start.w + (end.w - start.w) * e;
+    view.h = start.h + (end.h - start.h) * e;
+    setVB(svg);
+    if (k < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+// ========== [3] UI: add Lock Zoom (pan only) ==========
+(function mountRouteControlsOnce(){
+  const obs = new MutationObserver(() => {
+    const holder = document.getElementById("btnXFloor")?.parentElement;
+    if (!holder || document.getElementById("route-anim-panel")) return;
+
+    const wrap = document.createElement("div");
+    wrap.id = "route-anim-panel";
+    wrap.className = "mt-2 flex flex-wrap items-center gap-2";
+    wrap.innerHTML = `
+      <button id="ra-prev"  class="px-3 py-1 border rounded">Prev</button>
+      <button id="ra-play"  class="px-3 py-1 border rounded bg-indigo-600 text-white">Play</button>
+      <button id="ra-pause" class="px-3 py-1 border rounded">Pause</button>
+      <button id="ra-next"  class="px-3 py-1 border rounded">Next</button>
+      <button id="ra-reset" class="px-3 py-1 border rounded">Reset</button>
+      <label class="ml-3 text-sm flex items-center gap-2">
+        <input id="ra-follow" type="checkbox" checked/> Follow
+      </label>
+      <label class="text-sm flex items-center gap-2">
+        Speed(ms/step) <input id="ra-speed" type="number" min="80" value="450" class="w-24 border p-1 rounded"/>
+      </label>
+      <label class="text-sm flex items-center gap-2">
+        Follow Zoom(%) <input id="ra-zoom" type="number" min="70" max="120" value="90" class="w-20 border p-1 rounded" />
+      </label>
+      <label class="text-sm flex items-center gap-2">
+        <input id="ra-lockzoom" type="checkbox" checked/> Lock Zoom (pan only)
+      </label>
+      <span class="mx-3 text-gray-400">•</span>
+      <button id="pick-start" class="px-3 py-1 border rounded">Set Start from Click</button>
+      <button id="pick-goal"  class="px-3 py-1 border rounded">Set Goal from Click</button>
+    `;
+    holder.appendChild(wrap);
+
+    // wire
+    document.getElementById("ra-prev") ?.addEventListener("click", () => RouteAnim.prevStep());
+    document.getElementById("ra-next") ?.addEventListener("click", () => RouteAnim.nextStep());
+    document.getElementById("ra-play") ?.addEventListener("click", () => RouteAnim.play());
+    document.getElementById("ra-pause")?.addEventListener("click", () => RouteAnim.pause());
+    document.getElementById("ra-reset")?.addEventListener("click", () => RouteAnim.reset());
+    document.getElementById("ra-follow")?.addEventListener("change", (e)=> RouteAnim.setFollow(e.target.checked));
+    document.getElementById("ra-speed") ?.addEventListener("change", (e)=> RouteAnim.setSpeed(e.target.value));
+    document.getElementById("ra-zoom")  ?.addEventListener("change", (e)=> {
+      const z = Math.max(70, Math.min(120, Number(e.target.value) || 90)) / 100;
+      RouteAnim.setFollowZoom(z);
+    });
+    document.getElementById("ra-lockzoom")?.addEventListener("change", (e)=> {
+      RouteAnim.setLockZoom(e.target.checked);
+    });
+
+    // hook load after compute
+    const oldBtn = document.getElementById("btnXFloor");
+    if (oldBtn && !oldBtn._patched) {
+      oldBtn._patched = true;
+      oldBtn.addEventListener("click", () => {
+        setTimeout(() => {
+          const segsEl = window.lastSegmentsForAnim;
+          const metaEl = window.lastMetaForAnim;
+          if (segsEl && metaEl) RouteAnim.load(segsEl, metaEl);
+        }, 0);
+      }, true);
+    }
+
+    setupPickers();
+
+    document.getElementById("view-floor")?.addEventListener("change", () => {
+      setTimeout(() => RouteAnim.reset(), 0);
+      setTimeout(() => RouteAnim.load(window.lastSegmentsForAnim || [], window.lastMetaForAnim || {byKey:{}}), 30);
+    });
+  });
+  obs.observe(document.body, { childList: true, subtree: true });
+})();
+
+// ===== hooks/pickers/clear patch remain as before =====
+
+// ======= (hooks & pickers & clear patch remain the same from previous snippet) =======
+
+
+// ========== [4] Patch hook: เก็บ segments/meta หลังคำนวณ ==========
+(function hookAfterRouteCompute(){
+  const orig = window.renderRouteForCurrentFloor;
+  window.renderRouteForCurrentFloor = function(seg, meta) {
+    window.lastSegmentsForAnim = seg;
+    window.lastMetaForAnim = meta;
+    if (typeof orig === "function") orig.call(this, seg, meta);
+  };
+})();
+
+// ========== [5] Click pickers (pick start/goal by clicking nearest node) ==========
+function setupPickers(){
+  const svg = svgEl(); if (!svg) return;
+  let picking = null; // 'start' | 'goal' | null
+
+  const btnStart = document.getElementById("pick-start");
+  const btnGoal  = document.getElementById("pick-goal");
+
+  btnStart?.addEventListener("click", () => { picking = "start"; ccToast("คลิกบนแผนที่เพื่อเลือกจุดเริ่มต้น"); });
+  btnGoal ?.addEventListener("click", () => { picking = "goal";  ccToast("คลิกบนแผนที่เพื่อเลือกจุดปลายทาง"); });
+
+  svg.addEventListener("click", (e) => {
+    if (!picking) return;
+    const pt = svgPoint(e);
+    const snap = nearestNodeAt(pt.x, pt.y, 24);
+    if (!snap) { ccToast("ไม่พบโหนดใกล้เคียง"); picking = null; return; }
+    if (picking === "start") {
+      const sf = document.getElementById("sfloor");
+      const sn = document.getElementById("snode");
+      sf.value = String(currentFloor);
+      syncNodeDropdown("sfloor", "snode");
+      sn.value = snap.id;
+    } else {
+      const gf = document.getElementById("gfloor");
+      const gn = document.getElementById("gnode");
+      gf.value = String(currentFloor);
+      syncNodeDropdown("gfloor", "gnode");
+      gn.value = snap.id;
+    }
+    picking = null;
+    ccToast("เลือกแล้ว");
+  }, { capture: true });
+}
+
+// ========== [6] Safety: เคลียร์แอนิเมชันเมื่อ redraw/clear ==========
+(function patchClearOverlays(){
+  const orig = window.clearOverlays;
+  window.clearOverlays = function(){
+    if (typeof orig === "function") orig.call(this);
+    RouteAnim.pause();
+    const svg = svgEl();
+    svg?.querySelectorAll(".path-line-anim,.anim-dot").forEach(el => el.remove());
+  };
+})();
 
 
 // ---------- Boot ----------

@@ -1,0 +1,20 @@
+/* File: frontend/mall-skin.css */
+:root{
+  --mall-wall:#0f172a;
+  --mall-line:#ffffff;
+  --mall-floor:#f3f4f6;
+  --mall-corridor:#e5f0ff;
+}
+.mall-skin-on .svg-host{
+  background: radial-gradient(120% 120% at 80% 20%, #eef2ff 0%, #f8fafc 40%, #ffffff 100%);
+  border-radius: 14px;
+  box-shadow: 0 22px 60px rgba(15,23,42,.18);
+}
+.mall-legend{
+  display:flex; gap:.5rem; flex-wrap:wrap; font:500 12px/1.2 ui-sans-serif,system-ui;
+}
+.mall-legend span{display:inline-flex;align-items:center;gap:.35rem;padding:.28rem .5rem;border:1px solid #e5e7eb;border-radius:.5rem;background:#fff}
+.mall-dot{width:.8rem;height:.8rem;border-radius:999px;display:inline-block}
+
+/* อย่าชน route overlays เดิม */
+svg .path-line{ filter: drop-shadow(0 0 2px rgba(0,0,0,.25)); }
